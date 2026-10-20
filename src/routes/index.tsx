@@ -1,24 +1,58 @@
-import { createFileRoute } from "@tanstack/react-router";
+import { ClientOnly, createFileRoute, Link } from "@tanstack/react-router";
+import { lazy, Suspense } from "react";
+import { z } from "zod";
 
-// No head() here: the home route inherits title/description/og/twitter from
-// __root.tsx, and ships no og:image so serve-time hosting can inject the
-// project's social preview (explicit og:image or latest screenshot).
+const TourViewer = lazy(() => import("@/components/TourViewer"));
+
+const search = z.object({
+  embed: z.coerce.string().optional(),
+  scene: z.coerce.number().int().min(1).max(20).optional().catch(undefined),
+});
+
 export const Route = createFileRoute("/")({
+  validateSearch: search,
+  head: () => ({
+    meta: [
+      { title: "Tour Virtual 360° · 20 ambientes" },
+      { name: "description", content: "Passeie em 360° pela fachada, lounge, salão com bar, jogos e salas de pôquer no térreo e mezanino." },
+      { property: "og:title", content: "Tour Virtual 360° · 20 ambientes" },
+      { property: "og:description", content: "Explore cada ambiente em visão panorâmica, direto do celular ou computador." },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
+    ],
+  }),
   component: Index,
 });
 
-// IMPORTANT: Replace this placeholder. See ./README.md for routing conventions.
 function Index() {
+  const { embed, scene } = Route.useSearch();
+  const isEmbed = embed === "1";
+  const fallback = <div className={isEmbed ? "h-dvh bg-background" : "h-[78dvh] min-h-[420px] bg-background"} />;
+  const viewer = (
+    <ClientOnly fallback={fallback}>
+      <Suspense fallback={fallback}>
+        <TourViewer embed={isEmbed} initialScene={String(scene ?? 1)} />
+      </Suspense>
+    </ClientOnly>
+  );
+  if (isEmbed) return <main>{viewer}</main>;
   return (
-    <div
-      className="flex min-h-screen items-center justify-center"
-      style={{ backgroundColor: "#fcfbf8" }}
-    >
-      <img
-        data-lovable-blank-page-placeholder="REMOVE_THIS"
-        src="https://cdn.gpteng.co/blank-app-v1.svg"
-        alt="Your app will live here!"
-      />
+    <div className="min-h-dvh bg-background text-foreground">
+      <header className="flex items-center justify-between px-4 py-3 md:px-8">
+        <span className="flex items-center gap-2 font-display text-lg">
+          <span className="grid h-9 w-9 place-items-center rounded-full border border-primary text-xs text-primary">360°</span>
+          Tour Virtual
+        </span>
+        <Link to="/incorporar" className="text-sm text-primary underline-offset-4 hover:underline">Incorporar ↗</Link>
+      </header>
+      <main>
+        {viewer}
+        <section className="mx-auto max-w-3xl px-4 py-10 text-center">
+          <span className="text-xs uppercase tracking-[0.25em] text-primary">Um espaço. Múltiplas perspectivas.</span>
+          <h1 className="mt-2 font-display text-4xl md:text-5xl">Entre e explore.</h1>
+          <p className="mt-4 text-muted-foreground">Percorra a fachada, o lounge, o salão com bar e telão, os jogos eletrônicos e as áreas com mesas de pôquer no térreo e no mezanino. São 20 pontos fotografados em 360°, com acesso direto pelo menu de ambientes.</p>
+        </section>
+      </main>
     </div>
   );
 }

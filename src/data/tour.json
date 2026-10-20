@@ -1,0 +1,536 @@
+[
+ {
+  "id": "1",
+  "name": "Fachada e estacionamento",
+  "group": "Exterior",
+  "source": "17299.jpg",
+  "image": "/__l5e/assets-v1/49993b33-a70a-4b0d-9919-fbeef203b5b9/01.jpg",
+  "thumb": "/__l5e/assets-v1/912854a1-ec02-4a34-9936-ab1291c29bda/01-thumb.jpg",
+  "yaw": 0,
+  "pitch": 0,
+  "links": [
+   {
+    "to": "2",
+    "yaw": -25,
+    "pitch": -12,
+    "confidence": "alta",
+    "estimated": true
+   }
+  ]
+ },
+ {
+  "id": "2",
+  "name": "Entrada coberta",
+  "group": "Exterior",
+  "source": "17297.jpg",
+  "image": "/__l5e/assets-v1/cfdd5c62-8288-42fb-982d-bf1c2990b6dd/02.jpg",
+  "thumb": "/__l5e/assets-v1/e158d4c9-1d8c-4b6e-8f35-cc94cc6abb6e/02-thumb.jpg",
+  "yaw": 0,
+  "pitch": 0,
+  "links": [
+   {
+    "to": "1",
+    "yaw": 155,
+    "pitch": -15,
+    "confidence": "alta",
+    "estimated": true
+   },
+   {
+    "to": "4",
+    "yaw": -12,
+    "pitch": -12,
+    "confidence": "revisar",
+    "estimated": true
+   }
+  ]
+ },
+ {
+  "id": "3",
+  "name": "Lounge do sofá",
+  "group": "Térreo",
+  "source": "17272.jpg",
+  "image": "/__l5e/assets-v1/82efc291-8139-41c5-b156-cef78b02018f/03.jpg",
+  "thumb": "/__l5e/assets-v1/5ddda5a8-ae72-4908-9704-b2c28435ef7d/03-thumb.jpg",
+  "yaw": 0,
+  "pitch": 0,
+  "links": [
+   {
+    "to": "10",
+    "yaw": 95,
+    "pitch": -12,
+    "confidence": "alta",
+    "estimated": true
+   },
+   {
+    "to": "19",
+    "yaw": -145,
+    "pitch": -10,
+    "confidence": "alta",
+    "estimated": true
+   }
+  ]
+ },
+ {
+  "id": "4",
+  "name": "Salão · mesas frontais",
+  "group": "Térreo",
+  "source": "17265.jpg",
+  "image": "/__l5e/assets-v1/78d91324-725f-4a0c-830d-ca5cce9d97cc/04.jpg",
+  "thumb": "/__l5e/assets-v1/959b60bc-ead6-4f19-a8d2-f3c930a70056/04-thumb.jpg",
+  "yaw": 0,
+  "pitch": 0,
+  "links": [
+   {
+    "to": "2",
+    "yaw": 170,
+    "pitch": -10,
+    "confidence": "revisar",
+    "estimated": true
+   },
+   {
+    "to": "10",
+    "yaw": -25,
+    "pitch": -15,
+    "confidence": "alta",
+    "estimated": true
+   }
+  ]
+ },
+ {
+  "id": "5",
+  "name": "Salão · telão",
+  "group": "Térreo",
+  "source": "17255.jpg",
+  "image": "/__l5e/assets-v1/78205b86-5374-4a60-bca4-a449de2002b9/05.jpg",
+  "thumb": "/__l5e/assets-v1/43924e49-3829-4c1b-bc35-e88d02813028/05-thumb.jpg",
+  "yaw": 0,
+  "pitch": 0,
+  "links": [
+   {
+    "to": "10",
+    "yaw": 125,
+    "pitch": -15,
+    "confidence": "alta",
+    "estimated": true
+   },
+   {
+    "to": "6",
+    "yaw": -80,
+    "pitch": -12,
+    "confidence": "alta",
+    "estimated": true
+   }
+  ]
+ },
+ {
+  "id": "6",
+  "name": "Simulador de corrida",
+  "group": "Jogos",
+  "source": "17263.jpg",
+  "image": "/__l5e/assets-v1/0dfacdaa-faa2-41b8-bbb3-45f545121538/06.jpg",
+  "thumb": "/__l5e/assets-v1/684c0ba9-7415-43d6-82fb-24f8d0e091fe/06-thumb.jpg",
+  "yaw": 0,
+  "pitch": 0,
+  "links": [
+   {
+    "to": "5",
+    "yaw": 125,
+    "pitch": -14,
+    "confidence": "alta",
+    "estimated": true
+   },
+   {
+    "to": "8",
+    "yaw": -145,
+    "pitch": -12,
+    "confidence": "alta",
+    "estimated": true
+   },
+   {
+    "to": "15",
+    "yaw": -78,
+    "pitch": 4,
+    "confidence": "alta",
+    "estimated": true
+   }
+  ]
+ },
+ {
+  "id": "7",
+  "name": "Arcade · basquete",
+  "group": "Jogos",
+  "source": "17260.jpg",
+  "image": "/__l5e/assets-v1/cffad006-17e7-47e0-8f6a-e91a266cd7be/07.jpg",
+  "thumb": "/__l5e/assets-v1/317e03aa-1a57-483e-89e1-f7f2b1bda625/07-thumb.jpg",
+  "yaw": 0,
+  "pitch": 0,
+  "links": [
+   {
+    "to": "8",
+    "yaw": 110,
+    "pitch": -15,
+    "confidence": "alta",
+    "estimated": true
+   },
+   {
+    "to": "9",
+    "yaw": -125,
+    "pitch": -12,
+    "confidence": "alta",
+    "estimated": true
+   }
+  ]
+ },
+ {
+  "id": "8",
+  "name": "Arcade · air hockey",
+  "group": "Jogos",
+  "source": "17259.jpg",
+  "image": "/__l5e/assets-v1/cf1e32ca-f44a-4cac-b14b-7fa5d6f06b46/08.jpg",
+  "thumb": "/__l5e/assets-v1/bdc68eca-bacf-42d8-850e-0ebe3e288bed/08-thumb.jpg",
+  "yaw": 0,
+  "pitch": 0,
+  "links": [
+   {
+    "to": "6",
+    "yaw": -90,
+    "pitch": -12,
+    "confidence": "alta",
+    "estimated": true
+   },
+   {
+    "to": "7",
+    "yaw": 150,
+    "pitch": -12,
+    "confidence": "alta",
+    "estimated": true
+   },
+   {
+    "to": "9",
+    "yaw": 50,
+    "pitch": -10,
+    "confidence": "alta",
+    "estimated": true
+   }
+  ]
+ },
+ {
+  "id": "9",
+  "name": "Arcade · mural",
+  "group": "Jogos",
+  "source": "17258.jpg",
+  "image": "/__l5e/assets-v1/0e5c6af6-4ec0-41f3-8d54-24f59c9e38bd/09.jpg",
+  "thumb": "/__l5e/assets-v1/8ee1ded6-f5ba-42b1-bf14-f384f0d45dc6/09-thumb.jpg",
+  "yaw": 0,
+  "pitch": 0,
+  "links": [
+   {
+    "to": "8",
+    "yaw": -110,
+    "pitch": -15,
+    "confidence": "alta",
+    "estimated": true
+   },
+   {
+    "to": "7",
+    "yaw": 115,
+    "pitch": -12,
+    "confidence": "alta",
+    "estimated": true
+   }
+  ]
+ },
+ {
+  "id": "10",
+  "name": "Bar e salão",
+  "group": "Térreo",
+  "source": "17266.jpg",
+  "image": "/__l5e/assets-v1/be936d10-1248-49ee-ab8c-c26e6ccafa9c/10.jpg",
+  "thumb": "/__l5e/assets-v1/db99bfc5-8b32-4cb1-b3f2-f65007e7b20f/10-thumb.jpg",
+  "yaw": 0,
+  "pitch": 0,
+  "links": [
+   {
+    "to": "4",
+    "yaw": 90,
+    "pitch": -14,
+    "confidence": "alta",
+    "estimated": true
+   },
+   {
+    "to": "3",
+    "yaw": -140,
+    "pitch": -12,
+    "confidence": "alta",
+    "estimated": true
+   },
+   {
+    "to": "5",
+    "yaw": -15,
+    "pitch": -14,
+    "confidence": "alta",
+    "estimated": true
+   }
+  ]
+ },
+ {
+  "id": "11",
+  "name": "Pôquer · junto à escada",
+  "group": "Pôquer térreo",
+  "source": "17273.jpg",
+  "image": "/__l5e/assets-v1/8622565c-9ebe-4dae-ae36-dd3962297547/11.jpg",
+  "thumb": "/__l5e/assets-v1/6147d94b-df25-4016-a823-c034db9d8924/11-thumb.jpg",
+  "yaw": 0,
+  "pitch": 0,
+  "links": [
+   {
+    "to": "18",
+    "yaw": 60,
+    "pitch": -12,
+    "confidence": "alta",
+    "estimated": true
+   },
+   {
+    "to": "13",
+    "yaw": -95,
+    "pitch": 10,
+    "confidence": "revisar",
+    "estimated": true
+   }
+  ]
+ },
+ {
+  "id": "12",
+  "name": "Pôquer · mesa do mezanino",
+  "group": "Mezanino",
+  "source": "17278.jpg",
+  "image": "/__l5e/assets-v1/b1f324f4-aecf-48d5-8402-c341ed3c83b5/12.jpg",
+  "thumb": "/__l5e/assets-v1/b600fd2d-d3a6-47b0-9506-51b7ceb3b095/12-thumb.jpg",
+  "yaw": 0,
+  "pitch": 0,
+  "links": [
+   {
+    "to": "13",
+    "yaw": -90,
+    "pitch": -12,
+    "confidence": "revisar",
+    "estimated": true
+   }
+  ]
+ },
+ {
+  "id": "13",
+  "name": "Mezanino · balcão",
+  "group": "Mezanino",
+  "source": "17279.jpg",
+  "image": "/__l5e/assets-v1/fe510115-e5d5-46eb-a6af-51dbb67407cf/13.jpg",
+  "thumb": "/__l5e/assets-v1/311e3c72-fd31-45b5-a9e7-3842bcebd346/13-thumb.jpg",
+  "yaw": 0,
+  "pitch": 0,
+  "links": [
+   {
+    "to": "16",
+    "yaw": 130,
+    "pitch": -12,
+    "confidence": "alta",
+    "estimated": true
+   },
+   {
+    "to": "12",
+    "yaw": 25,
+    "pitch": -12,
+    "confidence": "revisar",
+    "estimated": true
+   },
+   {
+    "to": "11",
+    "yaw": -70,
+    "pitch": -20,
+    "confidence": "revisar",
+    "estimated": true
+   }
+  ]
+ },
+ {
+  "id": "14",
+  "name": "Corredor · telefone decorativo",
+  "group": "Térreo",
+  "source": "17292.jpg",
+  "image": "/__l5e/assets-v1/92c81b00-922b-4ee2-97bd-8ff5bd37200f/14.jpg",
+  "thumb": "/__l5e/assets-v1/d419eed7-961e-4f01-97ed-19a3068180e8/14-thumb.jpg",
+  "yaw": 0,
+  "pitch": 0,
+  "links": [
+   {
+    "to": "19",
+    "yaw": 150,
+    "pitch": -12,
+    "confidence": "alta",
+    "estimated": true
+   },
+   {
+    "to": "18",
+    "yaw": -105,
+    "pitch": -12,
+    "confidence": "alta",
+    "estimated": true
+   }
+  ]
+ },
+ {
+  "id": "15",
+  "name": "Mezanino · arcos",
+  "group": "Mezanino",
+  "source": "17289.jpg",
+  "image": "/__l5e/assets-v1/8552354d-386d-444f-9e58-a149ad1265dc/15.jpg",
+  "thumb": "/__l5e/assets-v1/1b3def5c-481a-400b-98a6-12f0c58ead36/15-thumb.jpg",
+  "yaw": 0,
+  "pitch": 0,
+  "links": [
+   {
+    "to": "6",
+    "yaw": 145,
+    "pitch": -20,
+    "confidence": "alta",
+    "estimated": true
+   },
+   {
+    "to": "17",
+    "yaw": -65,
+    "pitch": -10,
+    "confidence": "alta",
+    "estimated": true
+   }
+  ]
+ },
+ {
+  "id": "16",
+  "name": "Mezanino · corredor central",
+  "group": "Mezanino",
+  "source": "17280.jpg",
+  "image": "/__l5e/assets-v1/514a8642-a7a8-4b61-b0c0-e71adbde53da/16.jpg",
+  "thumb": "/__l5e/assets-v1/c92f8f27-d7d6-40cc-8ead-de22c24320df/16-thumb.jpg",
+  "yaw": 0,
+  "pitch": 0,
+  "links": [
+   {
+    "to": "17",
+    "yaw": 140,
+    "pitch": -10,
+    "confidence": "alta",
+    "estimated": true
+   },
+   {
+    "to": "13",
+    "yaw": -75,
+    "pitch": -12,
+    "confidence": "alta",
+    "estimated": true
+   }
+  ]
+ },
+ {
+  "id": "17",
+  "name": "Mezanino · apoio e acesso",
+  "group": "Mezanino",
+  "source": "17286.jpg",
+  "image": "/__l5e/assets-v1/e43e4d5d-23f0-4c86-8318-1a6901211435/17.jpg",
+  "thumb": "/__l5e/assets-v1/8d3ff725-5353-4dca-81a0-dd5b50bc5034/17-thumb.jpg",
+  "yaw": 0,
+  "pitch": 0,
+  "links": [
+   {
+    "to": "15",
+    "yaw": -110,
+    "pitch": -10,
+    "confidence": "alta",
+    "estimated": true
+   },
+   {
+    "to": "16",
+    "yaw": 10,
+    "pitch": -10,
+    "confidence": "alta",
+    "estimated": true
+   }
+  ]
+ },
+ {
+  "id": "18",
+  "name": "Pôquer · jardim vertical",
+  "group": "Pôquer térreo",
+  "source": "17295.jpg",
+  "image": "/__l5e/assets-v1/56058158-a66b-4e1f-a600-4fde75553916/18.jpg",
+  "thumb": "/__l5e/assets-v1/5c49d30d-9e85-43ac-b6bf-41ba1619ce77/18-thumb.jpg",
+  "yaw": 0,
+  "pitch": 0,
+  "links": [
+   {
+    "to": "14",
+    "yaw": -145,
+    "pitch": -10,
+    "confidence": "alta",
+    "estimated": true
+   },
+   {
+    "to": "11",
+    "yaw": 168,
+    "pitch": -10,
+    "confidence": "alta",
+    "estimated": true
+   },
+   {
+    "to": "20",
+    "yaw": 65,
+    "pitch": -12,
+    "confidence": "alta",
+    "estimated": true
+   }
+  ]
+ },
+ {
+  "id": "19",
+  "name": "Corredor · atendimento",
+  "group": "Térreo",
+  "source": "17293.jpg",
+  "image": "/__l5e/assets-v1/a4187c89-4b57-425d-aaa0-11a7ca450d1f/19.jpg",
+  "thumb": "/__l5e/assets-v1/78c43045-420c-4877-bee9-c8e994cefd09/19-thumb.jpg",
+  "yaw": 0,
+  "pitch": 0,
+  "links": [
+   {
+    "to": "3",
+    "yaw": 145,
+    "pitch": -12,
+    "confidence": "alta",
+    "estimated": true
+   },
+   {
+    "to": "14",
+    "yaw": -45,
+    "pitch": -12,
+    "confidence": "alta",
+    "estimated": true
+   }
+  ]
+ },
+ {
+  "id": "20",
+  "name": "Pôquer · mesa junto ao painel",
+  "group": "Pôquer térreo",
+  "source": "17496.jpg",
+  "image": "/__l5e/assets-v1/217ab2a7-7d58-4948-8930-52805ca4a322/20.jpg",
+  "thumb": "/__l5e/assets-v1/b16988d2-9ca7-4055-bf83-17625678a6f2/20-thumb.jpg",
+  "yaw": 0,
+  "pitch": 0,
+  "links": [
+   {
+    "to": "18",
+    "yaw": 110,
+    "pitch": -12,
+    "confidence": "alta",
+    "estimated": true
+   }
+  ]
+ }
+]

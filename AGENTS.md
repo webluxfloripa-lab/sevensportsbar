@@ -8,3 +8,5 @@
 > Commits you push to the connected branch sync back to Lovable and show up in
 > the editor, so keep the branch in a working state.
 <!-- LOVABLE:END -->
+
+- Tour 360: scene data lives in src/data/tour.json (CDN image URLs); Pannellum is vendored in public/vendor and loaded at runtime in the browser only, because it touches window at import.
