@@ -55,7 +55,7 @@ function buildConfig(list: TourScene[], first: string) {
   return { default: { firstScene: first, sceneFadeDuration: reducedMotion ? 0 : 900, autoLoad: true, showControls: false, compass: false, ...tourMotion(reducedMotion), mouseZoom: "fullscreenonly" }, scenes: sc };
 }
 
-export default function TourViewer({ embed, initialScene, list: loadedScenes }: { embed: boolean; initialScene: string; list?: TourScene[] | null }) {
+export default function TourViewer({ embed, initialScene, list: loadedScenes }: { embed: boolean; initialScene: string; list?: TourScene[] | null | undefined }) {
   const list = loadedScenes ?? scenes;
   const el = useRef<HTMLDivElement>(null);
   const viewer = useRef<any>(null);
