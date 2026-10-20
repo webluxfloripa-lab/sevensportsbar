@@ -11,7 +11,7 @@ function loadPannellum(): Promise<any> {
   return new Promise((resolve, reject) => {
     if (!document.querySelector('link[data-pnlm]')) {
       const l = document.createElement("link");
-      l.rel = "stylesheet"; l.href = "/vendor/pannellum.css"; l.dataset.pnlm = "1";
+      l.rel = "stylesheet"; l.href = "/vendor/pannellum.css"; l.setAttribute("data-pnlm", "1");
       document.head.appendChild(l);
     }
     const s = document.createElement("script");
