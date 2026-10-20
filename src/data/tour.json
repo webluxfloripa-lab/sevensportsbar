@@ -19,12 +19,12 @@
   ]
  },
  {
-  "id": "2",
-  "name": "Entrada coberta",
-  "group": "Exterior",
-  "source": "17297.jpg",
-  "image": "/__l5e/assets-v1/cfdd5c62-8288-42fb-982d-bf1c2990b6dd/02.jpg",
-  "thumb": "/__l5e/assets-v1/e158d4c9-1d8c-4b6e-8f35-cc94cc6abb6e/02-thumb.jpg",
+   "id": "2",
+   "name": "Entrada coberta",
+   "group": "Exterior",
+   "source": "20261020_084314_508.jpg",
+   "image": "/__l5e/assets-v1/9c9fe974-ee1f-487f-b77b-78885ef34373/02.jpg",
+   "thumb": "/__l5e/assets-v1/d6f3f5f8-cbd9-4452-af5c-49a9fa52135f/02-thumb.jpg",
   "yaw": 0,
   "pitch": 0,
   "links": [
@@ -153,17 +153,24 @@
     "confidence": "alta",
     "estimated": true
    },
-   {
-    "to": "15",
-    "yaw": -78,
-    "pitch": 4,
-    "confidence": "alta",
-    "estimated": true
-   }
-  ]
- },
- {
-  "id": "7",
+    {
+     "to": "15",
+     "yaw": -78,
+     "pitch": 4,
+     "confidence": "alta",
+     "estimated": true
+    },
+    {
+     "to": "22",
+     "yaw": 0,
+     "pitch": -8,
+     "confidence": "revisar",
+     "estimated": true
+    }
+   ]
+  },
+  {
+   "id": "7",
   "name": "Arcade · basquete",
   "group": "Jogos",
   "source": "17260.jpg",
@@ -553,6 +560,25 @@
     {
      "to": "3",
      "yaw": -15,
+     "pitch": -10,
+     "confidence": "revisar",
+     "estimated": true
+    }
+   ]
+  },
+  {
+   "id": "22",
+   "name": "Simulador de corrida · cockpit",
+   "group": "Jogos",
+   "source": "20261020_084602_559.jpg",
+   "image": "/__l5e/assets-v1/e4fb79f4-299c-41a6-9f01-cc78dd29e395/22.jpg",
+   "thumb": "/__l5e/assets-v1/2efd9844-cec7-4a41-bfd7-4e9a1cec9ac6/22-thumb.jpg",
+   "yaw": 0,
+   "pitch": 0,
+   "links": [
+    {
+     "to": "6",
+     "yaw": -120,
      "pitch": -10,
      "confidence": "revisar",
      "estimated": true
