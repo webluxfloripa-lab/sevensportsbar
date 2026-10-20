@@ -40,12 +40,13 @@ export const Route = createFileRoute("/")({
 
 function Index() {
   const { embed, scene } = Route.useSearch();
+  const list = Route.useLoaderData();
   const isEmbed = embed === "1";
   const fallback = <div className={isEmbed ? "h-dvh bg-background" : "h-[78dvh] min-h-[420px] bg-background"} />;
   const viewer = (
     <ClientOnly fallback={fallback}>
       <Suspense fallback={fallback}>
-        <TourViewer embed={isEmbed} initialScene={String(scene ?? 1)} list={Route.useLoaderData()} />
+        <TourViewer embed={isEmbed} initialScene={String(scene ?? 1)} list={list} />
       </Suspense>
     </ClientOnly>
   );

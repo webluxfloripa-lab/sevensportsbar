@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from "react";
-import { sceneById, type TourScene } from "@/data/tour";
+import { scenes, sceneById, type TourScene } from "@/data/tour";
 import { Button } from "@/components/ui/button";
 import { Pause, Play } from "lucide-react";
 import { tourMotion, TOUR_ROTATION_SPEED } from "@/lib/tour-motion";
@@ -55,7 +55,8 @@ function buildConfig(list: TourScene[], first: string) {
   return { default: { firstScene: first, sceneFadeDuration: reducedMotion ? 0 : 900, autoLoad: true, showControls: false, compass: false, ...tourMotion(reducedMotion), mouseZoom: "fullscreenonly" }, scenes: sc };
 }
 
-export default function TourViewer({ embed, initialScene, list }: { embed: boolean; initialScene: string; list: TourScene[] }) {
+export default function TourViewer({ embed, initialScene, list: loadedScenes }: { embed: boolean; initialScene: string; list?: TourScene[] | null }) {
+  const list = loadedScenes ?? scenes;
   const el = useRef<HTMLDivElement>(null);
   const viewer = useRef<any>(null);
   const history = useRef<string[]>([]);
