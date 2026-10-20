@@ -9,3 +9,10 @@
 - [ ] Publicar o site para levar as correções ao endereço oficial (ação do proprietário).
 - [x] Removida expiração de 4h e registro temporário de sessão no banco; auditoria ao vivo do login (6/6 verificações) aprovada.
 - [ ] Conferência do proprietário das setas ajustadas (6→8, 6→15, 18→14, 18→11) e conexões 2↔4, 11↔13, 12↔13.
+- [ ] Ajustar setas de volta na área do telão (análise feita, nada alterado ainda; manter as setas da recepção):
+  - Salão (4) → Recepção: hoje em cima da terra do canteiro; levar para o piso na ponta do canteiro, perto do lounge, inclinada para a esquerda, sem encostar na seta do Lounge.
+  - Bar e salão (10) → Salão (4): está a ~28° do ponto real; mover para o corredor entre as duas mesas compridas (~118°), seta reta.
+  - Cockpit (22) → Simulador (6): está do lado errado (atrás à esquerda); o Simulador fica atrás à direita (~134°).
+  - Conferir na foto: Telão (5) → Bar (seguir o corredor do balcão), Bar (10) → Lounge (hoje passa por cima das mesas altas), Simulador (6) → Telão, Air hockey (8) → Simulador.
+  - Mezanino · corredor central (16) tem uma seta criada no painel que leva à Fachada (1); confirmar com o proprietário.
+  - A página inicial ainda diz "20 pontos"; o tour tem 22.
