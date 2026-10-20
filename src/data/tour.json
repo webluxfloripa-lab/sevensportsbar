@@ -61,8 +61,8 @@
   "name": "Lounge do sofá",
   "group": "Térreo",
   "source": "17272.jpg",
-  "image": "/__l5e/assets-v1/82efc291-8139-41c5-b156-cef78b02018f/03.jpg",
-  "thumb": "/__l5e/assets-v1/5ddda5a8-ae72-4908-9704-b2c28435ef7d/03-thumb.jpg",
+  "image": "/__l5e/assets-v1/dca83c5b-6091-4098-a6f0-c4f6d00dcdcd/sofa-atual.jpg",
+  "thumb": "/__l5e/assets-v1/b540644d-9bfc-4507-8021-74b47d029754/sofa-atual-thumb.jpg",
   "yaw": 0,
   "pitch": 0,
   "links": [
@@ -79,8 +79,8 @@
    },
    {
     "to": "21",
-    "yaw": -172,
-    "pitch": -12,
+    "yaw": -168,
+    "pitch": -14,
     "rotation": 0,
     "size": 52,
     "opacity": 1,
@@ -98,6 +98,18 @@
     "style": "circle",
     "tone": "primary",
     "label": ""
+   },
+   {
+    "id": "3-to-4",
+    "to": "4",
+    "yaw": 110,
+    "pitch": -15,
+    "rotation": 0,
+    "size": 52,
+    "opacity": 1,
+    "style": "circle",
+    "tone": "primary",
+    "label": ""
    }
   ]
  },
@@ -106,18 +118,18 @@
   "name": "Salão · mesas frontais",
   "group": "Térreo",
   "source": "17265.jpg",
-  "image": "/__l5e/assets-v1/78d91324-725f-4a0c-830d-ca5cce9d97cc/04.jpg",
-  "thumb": "/__l5e/assets-v1/959b60bc-ead6-4f19-a8d2-f3c930a70056/04-thumb.jpg",
+  "image": "/__l5e/assets-v1/a7d0ffb5-d4af-4be0-a59e-d02103842e1d/salao-atual.jpg",
+  "thumb": "/__l5e/assets-v1/608b2f76-1cf7-41f9-b853-9eae0a2b5522/salao-atual-thumb.jpg",
   "yaw": 0,
   "pitch": 0,
   "links": [
    {
     "to": "21",
-    "yaw": 170,
+    "yaw": 175,
     "size": 52,
     "tone": "primary",
     "label": "",
-    "pitch": -10,
+    "pitch": -20,
     "style": "circle",
     "opacity": 1,
     "rotation": 0
@@ -132,6 +144,18 @@
     "style": "circle",
     "opacity": 1,
     "rotation": 0
+   },
+   {
+    "id": "4-to-3",
+    "to": "3",
+    "yaw": -120,
+    "pitch": -14,
+    "rotation": 0,
+    "size": 52,
+    "opacity": 1,
+    "style": "circle",
+    "tone": "primary",
+    "label": ""
    }
   ]
  },
@@ -722,15 +746,15 @@
   "name": "Recepção",
   "group": "Térreo",
   "source": "recepcao.jpg",
-  "image": "/__l5e/assets-v1/ac017416-c312-4f6f-9b13-10aea2e7e6d3/21.jpg",
-  "thumb": "/__l5e/assets-v1/ae443616-4390-4fda-88d6-e945030106dd/21-thumb.jpg",
+  "image": "/__l5e/assets-v1/0f293100-9ef9-4e90-8aaa-94fc89f975a1/recepcao-aprimorada.jpg",
+  "thumb": "/__l5e/assets-v1/d390b968-b875-4eb9-a718-525da8f4d4b2/recepcao-atual-thumb.jpg",
   "yaw": 0,
   "pitch": 0,
   "links": [
    {
     "to": "3",
-    "yaw": -3,
-    "pitch": -8,
+    "yaw": -1,
+    "pitch": -14,
     "rotation": 0,
     "size": 52,
     "opacity": 1,
@@ -751,9 +775,9 @@
    },
    {
     "to": "4",
-    "yaw": 40,
-    "pitch": -10,
-    "rotation": 0,
+    "yaw": 22,
+    "pitch": -29,
+    "rotation": 45,
     "size": 52,
     "opacity": 1,
     "style": "circle",
