@@ -141,15 +141,15 @@
    },
    {
     "to": "8",
-    "yaw": -110,
-    "pitch": -16,
+    "yaw": -145,
+    "pitch": -12,
     "confidence": "alta",
     "estimated": true
    },
    {
     "to": "15",
-    "yaw": -110,
-    "pitch": 8,
+    "yaw": -78,
+    "pitch": 4,
     "confidence": "alta",
     "estimated": true
    }
@@ -468,14 +468,14 @@
    {
     "to": "14",
     "yaw": -145,
-    "pitch": -12,
+    "pitch": -10,
     "confidence": "alta",
     "estimated": true
    },
    {
     "to": "11",
-    "yaw": -150,
-    "pitch": -12,
+    "yaw": 168,
+    "pitch": -10,
     "confidence": "alta",
     "estimated": true
    },
