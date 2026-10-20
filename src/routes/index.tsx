@@ -1,6 +1,10 @@
 import { ClientOnly, createFileRoute, Link } from "@tanstack/react-router";
 import { lazy, Suspense } from "react";
 import { z } from "zod";
+import ogSofa from "@/assets/og-sofa.jpg.asset.json";
+
+const SITE = "https://sevensportsbar.lovable.app";
+const OG_IMAGE = `${SITE}${ogSofa.url}`;
 
 const TourViewer = lazy(() => import("@/components/TourViewer"));
 
@@ -19,7 +23,15 @@ export const Route = createFileRoute("/")({
       { property: "og:description", content: "Explore cada ambiente em visão panorâmica, direto do celular ou computador." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
+      { property: "og:url", content: `${SITE}/` },
+      { property: "og:image", content: OG_IMAGE },
+      { property: "og:image:width", content: "1200" },
+      { property: "og:image:height", content: "630" },
+      { property: "og:image:alt", content: "Lounge com sofá Chesterfield de couro caramelo e quadros na parede" },
+      { name: "twitter:image", content: OG_IMAGE },
     ],
+    links: [{ rel: "canonical", href: `${SITE}/` }],
+
   }),
   component: Index,
 });
