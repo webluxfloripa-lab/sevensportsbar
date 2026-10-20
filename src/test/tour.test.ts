@@ -8,7 +8,7 @@ describe("mapa do tour", () => {
     expect(sceneById('21')?.links.some(l => l.to === '2')).toBe(true);
   });
   it("recepção, sofá e salão possuem conexões de ida e volta", () => {
-    for (const [from, to] of [['21', '3'], ['21', '4'], ['3', '4']]) {
+    for (const [from, to] of [['21', '3'], ['21', '4'], ['3', '4']] as const) {
       expect(sceneById(from)?.links.some(l => l.to === to)).toBe(true);
       expect(sceneById(to)?.links.some(l => l.to === from)).toBe(true);
     }
