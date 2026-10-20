@@ -220,7 +220,7 @@
     "size": 52,
     "tone": "primary",
     "label": "",
-    "pitch": -12,
+    "pitch": -16,
     "style": "circle",
     "opacity": 1,
     "rotation": 0
@@ -255,22 +255,22 @@
   "links": [
    {
     "to": "8",
-    "yaw": 110,
+    "yaw": 112,
     "size": 52,
     "tone": "primary",
     "label": "",
-    "pitch": -15,
+    "pitch": -25,
     "style": "circle",
     "opacity": 1,
     "rotation": 0
    },
    {
     "to": "9",
-    "yaw": -125,
+    "yaw": 178,
     "size": 52,
     "tone": "primary",
     "label": "",
-    "pitch": -12,
+    "pitch": -16,
     "style": "circle",
     "opacity": 1,
     "rotation": 0
@@ -293,18 +293,18 @@
     "size": 52,
     "tone": "primary",
     "label": "",
-    "pitch": -12,
+    "pitch": -14,
     "style": "circle",
     "opacity": 1,
     "rotation": 0
    },
    {
     "to": "7",
-    "yaw": 150,
+    "yaw": 145,
     "size": 52,
     "tone": "primary",
     "label": "",
-    "pitch": -12,
+    "pitch": -22,
     "style": "circle",
     "opacity": 1,
     "rotation": 0
@@ -315,7 +315,7 @@
     "size": 52,
     "tone": "primary",
     "label": "",
-    "pitch": -10,
+    "pitch": -20,
     "style": "circle",
     "opacity": 1,
     "rotation": 0
@@ -338,18 +338,18 @@
     "size": 52,
     "tone": "primary",
     "label": "",
-    "pitch": -15,
+    "pitch": -24,
     "style": "circle",
     "opacity": 1,
     "rotation": 0
    },
    {
     "to": "7",
-    "yaw": 115,
+    "yaw": 165,
     "size": 52,
     "tone": "primary",
     "label": "",
-    "pitch": -12,
+    "pitch": -16,
     "style": "circle",
     "opacity": 1,
     "rotation": 0
@@ -470,33 +470,33 @@
   "links": [
    {
     "to": "16",
-    "yaw": 130,
+    "yaw": 162,
     "size": 52,
     "tone": "primary",
     "label": "",
-    "pitch": -12,
+    "pitch": -22,
     "style": "circle",
     "opacity": 1,
     "rotation": 0
    },
    {
     "to": "12",
-    "yaw": 25,
+    "yaw": 22,
     "size": 52,
     "tone": "primary",
     "label": "",
-    "pitch": -12,
+    "pitch": -29,
     "style": "circle",
     "opacity": 1,
     "rotation": 0
    },
    {
     "to": "11",
-    "yaw": -70,
+    "yaw": -50,
     "size": 52,
     "tone": "primary",
     "label": "",
-    "pitch": -20,
+    "pitch": -22,
     "style": "circle",
     "opacity": 1,
     "rotation": 0
@@ -549,11 +549,11 @@
   "links": [
    {
     "to": "6",
-    "yaw": 145,
+    "yaw": 146,
     "size": 52,
     "tone": "primary",
     "label": "",
-    "pitch": -20,
+    "pitch": -29,
     "style": "circle",
     "opacity": 1,
     "rotation": 0
@@ -564,7 +564,7 @@
     "size": 52,
     "tone": "primary",
     "label": "",
-    "pitch": -10,
+    "pitch": -27,
     "style": "circle",
     "opacity": 1,
     "rotation": 0
@@ -583,22 +583,22 @@
   "links": [
    {
     "to": "17",
-    "yaw": 140,
+    "yaw": 137,
     "size": 52,
     "tone": "primary",
     "label": "",
-    "pitch": -10,
+    "pitch": -22,
     "style": "circle",
     "opacity": 1,
     "rotation": 0
    },
    {
     "to": "13",
-    "yaw": -75,
+    "yaw": -47,
     "size": 52,
     "tone": "primary",
     "label": "",
-    "pitch": -12,
+    "pitch": -22,
     "style": "circle",
     "opacity": 1,
     "rotation": 0
@@ -617,22 +617,22 @@
   "links": [
    {
     "to": "15",
-    "yaw": -110,
+    "yaw": -106,
     "size": 52,
     "tone": "primary",
     "label": "",
-    "pitch": -10,
+    "pitch": -29,
     "style": "circle",
     "opacity": 1,
     "rotation": 0
    },
    {
     "to": "16",
-    "yaw": 10,
+    "yaw": 36,
     "size": 52,
     "tone": "primary",
     "label": "",
-    "pitch": -10,
+    "pitch": -18,
     "style": "circle",
     "opacity": 1,
     "rotation": 0
