@@ -125,11 +125,11 @@
   "links": [
    {
     "to": "21",
-     "yaw": -151,
+    "yaw": -132,
     "size": 52,
     "tone": "primary",
     "label": "",
-     "pitch": -26,
+    "pitch": -34,
     "style": "circle",
     "opacity": 1,
     "rotation": 0
