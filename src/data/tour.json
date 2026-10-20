@@ -11,36 +11,48 @@
   "links": [
    {
     "to": "2",
-    "yaw": -25,
-    "pitch": -12,
-    "confidence": "alta",
-    "estimated": true
+    "yaw": -39.59932246867112,
+    "size": 38,
+    "tone": "primary",
+    "label": "",
+    "pitch": -13.9,
+    "style": "circle",
+    "opacity": 0.75,
+    "rotation": -7
    }
   ]
  },
  {
-   "id": "2",
-   "name": "Entrada coberta",
-   "group": "Exterior",
-   "source": "20261020_084314_508.jpg",
-   "image": "/__l5e/assets-v1/9c9fe974-ee1f-487f-b77b-78885ef34373/02.jpg",
-   "thumb": "/__l5e/assets-v1/d6f3f5f8-cbd9-4452-af5c-49a9fa52135f/02-thumb.jpg",
+  "id": "2",
+  "name": "Entrada coberta",
+  "group": "Exterior",
+  "source": "20261020_084314_508.jpg",
+  "image": "/__l5e/assets-v1/9c9fe974-ee1f-487f-b77b-78885ef34373/02.jpg",
+  "thumb": "/__l5e/assets-v1/d6f3f5f8-cbd9-4452-af5c-49a9fa52135f/02-thumb.jpg",
   "yaw": 0,
   "pitch": 0,
   "links": [
    {
     "to": "1",
     "yaw": 155,
+    "size": 52,
+    "tone": "primary",
+    "label": "",
     "pitch": -15,
-    "confidence": "alta",
-    "estimated": true
+    "style": "circle",
+    "opacity": 1,
+    "rotation": 0
    },
    {
-    "to": "4",
-    "yaw": -12,
-    "pitch": -12,
-    "confidence": "revisar",
-    "estimated": true
+    "to": "21",
+    "yaw": 8,
+    "size": 52,
+    "tone": "primary",
+    "label": "",
+    "pitch": -15,
+    "style": "circle",
+    "opacity": 1,
+    "rotation": 0
    }
   ]
  },
@@ -54,29 +66,41 @@
   "yaw": 0,
   "pitch": 0,
   "links": [
-    {
-     "to": "10",
-     "yaw": 95,
-     "pitch": -12,
-     "confidence": "alta",
-     "estimated": true
-    },
-    {
-     "to": "19",
-     "yaw": -145,
-     "pitch": -10,
-     "confidence": "alta",
-     "estimated": true
-    },
-    {
-     "to": "21",
-     "yaw": -170,
-     "pitch": -10,
-     "confidence": "revisar",
-     "estimated": true
-    }
-   ]
-  },
+   {
+    "to": "10",
+    "yaw": 132.4191529427094,
+    "size": 52,
+    "tone": "primary",
+    "label": "",
+    "pitch": -10.189812701086625,
+    "style": "circle",
+    "opacity": 1,
+    "rotation": 0
+   },
+   {
+    "to": "21",
+    "yaw": -172,
+    "pitch": -12,
+    "rotation": 0,
+    "size": 52,
+    "opacity": 1,
+    "style": "circle",
+    "tone": "primary",
+    "label": ""
+   },
+   {
+    "to": "19",
+    "yaw": -152,
+    "pitch": -10,
+    "rotation": 90,
+    "size": 52,
+    "opacity": 1,
+    "style": "circle",
+    "tone": "primary",
+    "label": ""
+   }
+  ]
+ },
  {
   "id": "4",
   "name": "Salão · mesas frontais",
@@ -88,18 +112,26 @@
   "pitch": 0,
   "links": [
    {
-    "to": "2",
+    "to": "21",
     "yaw": 170,
+    "size": 52,
+    "tone": "primary",
+    "label": "",
     "pitch": -10,
-    "confidence": "revisar",
-    "estimated": true
+    "style": "circle",
+    "opacity": 1,
+    "rotation": 0
    },
    {
     "to": "10",
-    "yaw": -25,
-    "pitch": -15,
-    "confidence": "alta",
-    "estimated": true
+    "yaw": -1.6885893428180907,
+    "size": 52,
+    "tone": "primary",
+    "label": "",
+    "pitch": -14.570666668239443,
+    "style": "circle",
+    "opacity": 1,
+    "rotation": 0
    }
   ]
  },
@@ -116,16 +148,24 @@
    {
     "to": "10",
     "yaw": 125,
+    "size": 52,
+    "tone": "primary",
+    "label": "",
     "pitch": -15,
-    "confidence": "alta",
-    "estimated": true
+    "style": "circle",
+    "opacity": 1,
+    "rotation": 0
    },
    {
     "to": "6",
     "yaw": -80,
+    "size": 52,
+    "tone": "primary",
+    "label": "",
     "pitch": -12,
-    "confidence": "alta",
-    "estimated": true
+    "style": "circle",
+    "opacity": 1,
+    "rotation": 0
    }
   ]
  },
@@ -134,43 +174,53 @@
   "name": "Simulador de corrida",
   "group": "Jogos",
   "source": "17263.jpg",
-   "image": "/__l5e/assets-v1/d19a2cf4-5eec-4d2b-8d73-099fb232a1f8/06.jpg",
-   "thumb": "/__l5e/assets-v1/4a0df8e8-f2eb-4f0b-bd2b-9caf934abee5/06-thumb.jpg",
+  "image": "/__l5e/assets-v1/d19a2cf4-5eec-4d2b-8d73-099fb232a1f8/06.jpg",
+  "thumb": "/__l5e/assets-v1/4a0df8e8-f2eb-4f0b-bd2b-9caf934abee5/06-thumb.jpg",
   "yaw": 0,
   "pitch": 0,
   "links": [
    {
     "to": "5",
     "yaw": 125,
+    "size": 52,
+    "tone": "primary",
+    "label": "",
     "pitch": -14,
-    "confidence": "alta",
-    "estimated": true
+    "style": "circle",
+    "opacity": 1,
+    "rotation": 0
    },
    {
     "to": "8",
     "yaw": -145,
+    "size": 52,
+    "tone": "primary",
+    "label": "",
     "pitch": -12,
-    "confidence": "alta",
-    "estimated": true
+    "style": "circle",
+    "opacity": 1,
+    "rotation": 0
    },
-    {
-     "to": "15",
-     "yaw": -78,
-     "pitch": 4,
-     "confidence": "alta",
-     "estimated": true
-    },
-    {
-     "to": "22",
-     "yaw": 0,
-     "pitch": -8,
-     "confidence": "revisar",
-     "estimated": true
-    }
-   ]
-  },
-  {
-   "id": "7",
+   {
+    "to": "15",
+    "yaw": -78,
+    "size": 52,
+    "tone": "primary",
+    "label": "",
+    "pitch": 4,
+    "style": "circle",
+    "opacity": 1,
+    "rotation": 0
+   },
+   {
+    "to": "22",
+    "yaw": 0,
+    "pitch": -8
+   }
+  ]
+ },
+ {
+  "id": "7",
   "name": "Arcade · basquete",
   "group": "Jogos",
   "source": "17260.jpg",
@@ -182,16 +232,24 @@
    {
     "to": "8",
     "yaw": 110,
+    "size": 52,
+    "tone": "primary",
+    "label": "",
     "pitch": -15,
-    "confidence": "alta",
-    "estimated": true
+    "style": "circle",
+    "opacity": 1,
+    "rotation": 0
    },
    {
     "to": "9",
     "yaw": -125,
+    "size": 52,
+    "tone": "primary",
+    "label": "",
     "pitch": -12,
-    "confidence": "alta",
-    "estimated": true
+    "style": "circle",
+    "opacity": 1,
+    "rotation": 0
    }
   ]
  },
@@ -208,23 +266,35 @@
    {
     "to": "6",
     "yaw": -90,
+    "size": 52,
+    "tone": "primary",
+    "label": "",
     "pitch": -12,
-    "confidence": "alta",
-    "estimated": true
+    "style": "circle",
+    "opacity": 1,
+    "rotation": 0
    },
    {
     "to": "7",
     "yaw": 150,
+    "size": 52,
+    "tone": "primary",
+    "label": "",
     "pitch": -12,
-    "confidence": "alta",
-    "estimated": true
+    "style": "circle",
+    "opacity": 1,
+    "rotation": 0
    },
    {
     "to": "9",
     "yaw": 50,
+    "size": 52,
+    "tone": "primary",
+    "label": "",
     "pitch": -10,
-    "confidence": "alta",
-    "estimated": true
+    "style": "circle",
+    "opacity": 1,
+    "rotation": 0
    }
   ]
  },
@@ -241,16 +311,24 @@
    {
     "to": "8",
     "yaw": -110,
+    "size": 52,
+    "tone": "primary",
+    "label": "",
     "pitch": -15,
-    "confidence": "alta",
-    "estimated": true
+    "style": "circle",
+    "opacity": 1,
+    "rotation": 0
    },
    {
     "to": "7",
     "yaw": 115,
+    "size": 52,
+    "tone": "primary",
+    "label": "",
     "pitch": -12,
-    "confidence": "alta",
-    "estimated": true
+    "style": "circle",
+    "opacity": 1,
+    "rotation": 0
    }
   ]
  },
@@ -267,23 +345,35 @@
    {
     "to": "4",
     "yaw": 90,
+    "size": 52,
+    "tone": "primary",
+    "label": "",
     "pitch": -14,
-    "confidence": "alta",
-    "estimated": true
+    "style": "circle",
+    "opacity": 1,
+    "rotation": 0
    },
    {
     "to": "3",
     "yaw": -140,
+    "size": 52,
+    "tone": "primary",
+    "label": "",
     "pitch": -12,
-    "confidence": "alta",
-    "estimated": true
+    "style": "circle",
+    "opacity": 1,
+    "rotation": 0
    },
    {
     "to": "5",
     "yaw": -15,
+    "size": 52,
+    "tone": "primary",
+    "label": "",
     "pitch": -14,
-    "confidence": "alta",
-    "estimated": true
+    "style": "circle",
+    "opacity": 1,
+    "rotation": 0
    }
   ]
  },
@@ -300,16 +390,24 @@
    {
     "to": "18",
     "yaw": 60,
+    "size": 52,
+    "tone": "primary",
+    "label": "",
     "pitch": -12,
-    "confidence": "alta",
-    "estimated": true
+    "style": "circle",
+    "opacity": 1,
+    "rotation": 180
    },
    {
     "to": "13",
     "yaw": -95,
+    "size": 52,
+    "tone": "primary",
+    "label": "",
     "pitch": 10,
-    "confidence": "revisar",
-    "estimated": true
+    "style": "circle",
+    "opacity": 1,
+    "rotation": 0
    }
   ]
  },
@@ -326,9 +424,13 @@
    {
     "to": "13",
     "yaw": -90,
+    "size": 52,
+    "tone": "primary",
+    "label": "",
     "pitch": -12,
-    "confidence": "revisar",
-    "estimated": true
+    "style": "circle",
+    "opacity": 1,
+    "rotation": 0
    }
   ]
  },
@@ -345,23 +447,35 @@
    {
     "to": "16",
     "yaw": 130,
+    "size": 52,
+    "tone": "primary",
+    "label": "",
     "pitch": -12,
-    "confidence": "alta",
-    "estimated": true
+    "style": "circle",
+    "opacity": 1,
+    "rotation": 0
    },
    {
     "to": "12",
     "yaw": 25,
+    "size": 52,
+    "tone": "primary",
+    "label": "",
     "pitch": -12,
-    "confidence": "revisar",
-    "estimated": true
+    "style": "circle",
+    "opacity": 1,
+    "rotation": 0
    },
    {
     "to": "11",
     "yaw": -70,
+    "size": 52,
+    "tone": "primary",
+    "label": "",
     "pitch": -20,
-    "confidence": "revisar",
-    "estimated": true
+    "style": "circle",
+    "opacity": 1,
+    "rotation": 0
    }
   ]
  },
@@ -377,17 +491,25 @@
   "links": [
    {
     "to": "19",
-    "yaw": 150,
-    "pitch": -12,
-    "confidence": "alta",
-    "estimated": true
+    "yaw": 178,
+    "size": 52,
+    "tone": "primary",
+    "label": "",
+    "pitch": -8,
+    "style": "circle",
+    "opacity": 1,
+    "rotation": 0
    },
    {
     "to": "18",
     "yaw": -105,
+    "size": 52,
+    "tone": "primary",
+    "label": "",
     "pitch": -12,
-    "confidence": "alta",
-    "estimated": true
+    "style": "circle",
+    "opacity": 1,
+    "rotation": 0
    }
   ]
  },
@@ -404,16 +526,24 @@
    {
     "to": "6",
     "yaw": 145,
+    "size": 52,
+    "tone": "primary",
+    "label": "",
     "pitch": -20,
-    "confidence": "alta",
-    "estimated": true
+    "style": "circle",
+    "opacity": 1,
+    "rotation": 0
    },
    {
     "to": "17",
     "yaw": -65,
+    "size": 52,
+    "tone": "primary",
+    "label": "",
     "pitch": -10,
-    "confidence": "alta",
-    "estimated": true
+    "style": "circle",
+    "opacity": 1,
+    "rotation": 0
    }
   ]
  },
@@ -430,16 +560,24 @@
    {
     "to": "17",
     "yaw": 140,
+    "size": 52,
+    "tone": "primary",
+    "label": "",
     "pitch": -10,
-    "confidence": "alta",
-    "estimated": true
+    "style": "circle",
+    "opacity": 1,
+    "rotation": 0
    },
    {
     "to": "13",
     "yaw": -75,
+    "size": 52,
+    "tone": "primary",
+    "label": "",
     "pitch": -12,
-    "confidence": "alta",
-    "estimated": true
+    "style": "circle",
+    "opacity": 1,
+    "rotation": 0
    }
   ]
  },
@@ -456,16 +594,24 @@
    {
     "to": "15",
     "yaw": -110,
+    "size": 52,
+    "tone": "primary",
+    "label": "",
     "pitch": -10,
-    "confidence": "alta",
-    "estimated": true
+    "style": "circle",
+    "opacity": 1,
+    "rotation": 0
    },
    {
     "to": "16",
     "yaw": 10,
+    "size": 52,
+    "tone": "primary",
+    "label": "",
     "pitch": -10,
-    "confidence": "alta",
-    "estimated": true
+    "style": "circle",
+    "opacity": 1,
+    "rotation": 0
    }
   ]
  },
@@ -482,23 +628,35 @@
    {
     "to": "14",
     "yaw": -145,
+    "size": 52,
+    "tone": "primary",
+    "label": "",
     "pitch": -10,
-    "confidence": "alta",
-    "estimated": true
+    "style": "circle",
+    "opacity": 1,
+    "rotation": 90
    },
    {
     "to": "11",
     "yaw": 168,
+    "size": 52,
+    "tone": "primary",
+    "label": "",
     "pitch": -10,
-    "confidence": "alta",
-    "estimated": true
+    "style": "circle",
+    "opacity": 1,
+    "rotation": 0
    },
    {
     "to": "20",
     "yaw": 65,
+    "size": 52,
+    "tone": "primary",
+    "label": "",
     "pitch": -12,
-    "confidence": "alta",
-    "estimated": true
+    "style": "circle",
+    "opacity": 1,
+    "rotation": 0
    }
   ]
  },
@@ -515,16 +673,24 @@
    {
     "to": "3",
     "yaw": 145,
+    "size": 52,
+    "tone": "primary",
+    "label": "",
     "pitch": -12,
-    "confidence": "alta",
-    "estimated": true
+    "style": "circle",
+    "opacity": 1,
+    "rotation": 0
    },
    {
     "to": "14",
     "yaw": -45,
+    "size": 52,
+    "tone": "primary",
+    "label": "",
     "pitch": -12,
-    "confidence": "alta",
-    "estimated": true
+    "style": "circle",
+    "opacity": 1,
+    "rotation": 0
    }
   ]
  },
@@ -537,52 +703,80 @@
   "thumb": "/__l5e/assets-v1/b16988d2-9ca7-4055-bf83-17625678a6f2/20-thumb.jpg",
   "yaw": 0,
   "pitch": 0,
-   "links": [
-    {
-     "to": "18",
-     "yaw": 110,
-     "pitch": -12,
-     "confidence": "alta",
-     "estimated": true
-    }
-   ]
-  },
-  {
-   "id": "21",
-   "name": "Recepção",
-   "group": "Térreo",
-   "source": "recepcao.jpg",
-   "image": "/__l5e/assets-v1/ac017416-c312-4f6f-9b13-10aea2e7e6d3/21.jpg",
-   "thumb": "/__l5e/assets-v1/ae443616-4390-4fda-88d6-e945030106dd/21-thumb.jpg",
-   "yaw": 0,
-   "pitch": 0,
-   "links": [
-    {
-     "to": "3",
-     "yaw": -15,
-     "pitch": -10,
-     "confidence": "revisar",
-     "estimated": true
-    }
-   ]
-  },
-  {
-   "id": "22",
-   "name": "Simulador de corrida · cockpit",
-   "group": "Jogos",
-   "source": "20261020_084602_559.jpg",
-   "image": "/__l5e/assets-v1/e4fb79f4-299c-41a6-9f01-cc78dd29e395/22.jpg",
-   "thumb": "/__l5e/assets-v1/2efd9844-cec7-4a41-bfd7-4e9a1cec9ac6/22-thumb.jpg",
-   "yaw": 0,
-   "pitch": 0,
-   "links": [
-    {
-     "to": "6",
-     "yaw": -120,
-     "pitch": -10,
-     "confidence": "revisar",
-     "estimated": true
-    }
-   ]
-  }
+  "links": [
+   {
+    "to": "18",
+    "yaw": 110,
+    "size": 52,
+    "tone": "primary",
+    "label": "",
+    "pitch": -12,
+    "style": "circle",
+    "opacity": 1,
+    "rotation": 0
+   }
+  ]
+ },
+ {
+  "id": "21",
+  "name": "Recepção",
+  "group": "Térreo",
+  "source": "recepcao.jpg",
+  "image": "/__l5e/assets-v1/ac017416-c312-4f6f-9b13-10aea2e7e6d3/21.jpg",
+  "thumb": "/__l5e/assets-v1/ae443616-4390-4fda-88d6-e945030106dd/21-thumb.jpg",
+  "yaw": 0,
+  "pitch": 0,
+  "links": [
+   {
+    "to": "3",
+    "yaw": -3,
+    "pitch": -8,
+    "rotation": 0,
+    "size": 52,
+    "opacity": 1,
+    "style": "circle",
+    "tone": "primary",
+    "label": ""
+   },
+   {
+    "to": "2",
+    "yaw": -115,
+    "pitch": -12,
+    "rotation": 0,
+    "size": 52,
+    "opacity": 1,
+    "style": "circle",
+    "tone": "primary",
+    "label": ""
+   },
+   {
+    "to": "4",
+    "yaw": 40,
+    "pitch": -10,
+    "rotation": 0,
+    "size": 52,
+    "opacity": 1,
+    "style": "circle",
+    "tone": "primary",
+    "label": ""
+   }
+  ]
+ },
+ {
+  "id": "22",
+  "name": "Simulador de corrida · cockpit",
+  "group": "Jogos",
+  "source": "20261020_084602_559.jpg",
+  "image": "/__l5e/assets-v1/e4fb79f4-299c-41a6-9f01-cc78dd29e395/22.jpg",
+  "thumb": "/__l5e/assets-v1/2efd9844-cec7-4a41-bfd7-4e9a1cec9ac6/22-thumb.jpg",
+  "yaw": 0,
+  "pitch": 0,
+  "links": [
+   {
+    "to": "6",
+    "yaw": -120,
+    "pitch": -10
+   }
+  ]
+ }
 ]
