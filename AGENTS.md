@@ -10,3 +10,4 @@
 <!-- LOVABLE:END -->
 
 - Tour 360: scene data lives in src/data/tour.json (CDN image URLs); Pannellum is vendored in public/vendor and loaded at runtime in the browser only, because it touches window at import.
+- Tour motion configuration lives in a browser-safe helper and is applied when creating viewers; honor reduced-motion preferences and preserve a manual playback override across scene changes.
