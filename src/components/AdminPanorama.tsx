@@ -16,7 +16,7 @@ export default function AdminPanorama({ sceneId, arrows, selected, placing, prev
     const v = viewer.current; if (!v) return;
     for (const id of v.getConfig().hotSpots?.map((h: any) => h.id) ?? []) v.removeHotSpot(id);
     for (const a of props.current.arrows) v.addHotSpot({ id: a.id, yaw: a.yaw, pitch: a.pitch, cssClass: 'tour-arrow admin-arrow', createTooltipFunc: (div: HTMLElement) => {
-      div.dataset.arrowId = a.id;
+      div.dataset['arrowId'] = a.id;
       div.classList.toggle('selected', props.current.selected === a.id);
       div.classList.toggle('plain', a.style === 'plain');
       div.setAttribute('aria-label', a.label || `Seta para ${scenes.find(s => s.id === a.to)?.name}`);
@@ -54,7 +54,7 @@ export default function AdminPanorama({ sceneId, arrows, selected, placing, prev
     let alive = true;
     async function init() {
       if (!window.pannellum) await new Promise<void>((resolve, reject) => {
-        if (!document.querySelector('link[data-pnlm]')) { const l = document.createElement('link'); l.rel = 'stylesheet'; l.href = '/vendor/pannellum.css'; l.dataset.pnlm = '1'; document.head.append(l); }
+        if (!document.querySelector('link[data-pnlm]')) { const l = document.createElement('link'); l.rel = 'stylesheet'; l.href = '/vendor/pannellum.css'; l.dataset['pnlm'] = '1'; document.head.append(l); }
         const s = document.createElement('script'); s.src = '/vendor/pannellum.js'; s.onload = () => resolve(); s.onerror = () => reject(); document.body.append(s);
       });
       const scene = scenes.find(s => s.id === sceneId); if (!alive || !el.current || !scene) return;

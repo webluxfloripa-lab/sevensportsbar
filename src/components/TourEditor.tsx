@@ -48,7 +48,7 @@ export default function TourEditor({ initial, revision: firstRevision, onExpired
   useEffect(() => { void stateFn().then(state => { if (state.authenticated) setVersions(state.versions); }); }, []);
   const controls = <>
     {(['rotation', 'yaw', 'pitch', 'size', 'opacity'] as const).map(key => {
-      const ranges = { rotation: [-180, 180, 1], yaw: [-180, 180, .1], pitch: [-62, 80, .1], size: [32, 88, 1], opacity: [.3, 1, .05] };
+      const ranges: Record<typeof key, [number, number, number]> = { rotation: [-180, 180, 1], yaw: [-180, 180, .1], pitch: [-62, 80, .1], size: [32, 88, 1], opacity: [.3, 1, .05] };
       const names = { rotation: 'Orientação', yaw: 'Posição horizontal', pitch: 'Posição vertical', size: 'Tamanho', opacity: 'Opacidade' };
       const [min, max, step] = ranges[key];
       return <label key={key} className="grid gap-2 text-sm">{names[key]}<div className="flex gap-2"><input aria-label={names[key]} type="range" min={min} max={max} step={step} value={arrow?.[key] ?? min} onChange={e => update({ [key]: Number(e.target.value) })} className="min-w-0 flex-1 accent-primary" /><input aria-label={`${names[key]} numérica`} type="number" min={min} max={max} step={step} value={arrow?.[key] ?? min} onChange={e => update({ [key]: Math.max(min, Math.min(max, Number(e.target.value))) })} className="admin-input w-20" /></div></label>;
