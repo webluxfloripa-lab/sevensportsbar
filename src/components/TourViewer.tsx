@@ -1,5 +1,8 @@
 import { useEffect, useRef, useState } from "react";
 import { scenes, sceneById, type TourScene } from "@/data/tour";
+import { Button } from "@/components/ui/button";
+import { Pause, Play } from "lucide-react";
+import { tourMotion, TOUR_ROTATION_SPEED } from "@/lib/tour-motion";
 
 /* eslint-disable @typescript-eslint/no-explicit-any */
 declare global {
@@ -46,13 +49,16 @@ function buildConfig(list: TourScene[], ov: Overrides, first: string) {
       }),
     };
   }
-  return { default: { firstScene: first, sceneFadeDuration: 600, autoLoad: true, showControls: false, compass: false, friction: 0.08, mouseZoom: "fullscreenonly", touchPanSpeedCoeffFactor: 1.2 }, scenes: sc };
+  const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  return { default: { firstScene: first, sceneFadeDuration: reducedMotion ? 0 : 900, autoLoad: true, showControls: false, compass: false, ...tourMotion(reducedMotion), mouseZoom: "fullscreenonly" }, scenes: sc };
 }
 
 export default function TourViewer({ embed, initialScene }: { embed: boolean; initialScene: string }) {
   const el = useRef<HTMLDivElement>(null);
   const viewer = useRef<any>(null);
   const history = useRef<string[]>([]);
+  const playingRef = useRef(true);
+  const [playing, setPlaying] = useState(true);
   const [current, setCurrent] = useState(initialScene);
   const [menu, setMenu] = useState(false);
   const [loading, setLoading] = useState(true);
@@ -65,22 +71,38 @@ export default function TourViewer({ embed, initialScene }: { embed: boolean; in
     let saved: Overrides = {};
     try { saved = JSON.parse(localStorage.getItem(STORAGE) || "{}"); } catch { /* vazio */ }
     setOv(saved);
+    const preference = window.matchMedia("(prefers-reduced-motion: reduce)");
+    playingRef.current = !preference.matches;
+    setPlaying(playingRef.current);
+    const applyPreference = () => {
+      playingRef.current = !preference.matches;
+      setPlaying(playingRef.current);
+      if (playingRef.current) viewer.current?.startAutoRotate(TOUR_ROTATION_SPEED, viewer.current.getPitch());
+      else viewer.current?.stopAutoRotate();
+    };
+    preference.addEventListener("change", applyPreference);
     let alive = true;
     loadPannellum().then((p) => {
       if (!alive || !el.current) return;
       viewer.current = p.viewer(el.current, buildConfig(scenes, saved, initialScene));
-      viewer.current.on("load", () => setLoading(false));
+      viewer.current.on("load", () => { setLoading(false); if (!playingRef.current) viewer.current?.stopAutoRotate(); });
       viewer.current.on("scenechange", (id: string) => { setLoading(true); setCurrent((prev) => { history.current.push(prev); return id; }); });
     });
-    return () => { alive = false; viewer.current?.destroy?.(); };
+    return () => { alive = false; preference.removeEventListener("change", applyPreference); viewer.current?.destroy?.(); };
   }, [initialScene]);
 
   const go = (id: string) => { if (id !== current) viewer.current?.loadScene(id); setMenu(false); };
   const back = () => { const p = history.current.pop(); if (p) { viewer.current?.loadScene(p); history.current.pop(); } };
-  const zoom = (d: number) => viewer.current?.setHfov(viewer.current.getHfov() + d);
+  const zoom = (d: number) => viewer.current?.setHfov(viewer.current.getHfov() + d, 600);
   const full = () => viewer.current?.toggleFullscreen();
+  const togglePlayback = () => {
+    playingRef.current = !playingRef.current;
+    setPlaying(playingRef.current);
+    if (playingRef.current) viewer.current?.startAutoRotate(TOUR_ROTATION_SPEED, viewer.current.getPitch());
+    else viewer.current?.stopAutoRotate();
+  };
 
-  const scene = sceneById(current)!;
+  const scene = sceneById(current);
   useEffect(() => { setEditLink(scene?.links[0]?.to ?? ""); }, [current]); // eslint-disable-line react-hooks/exhaustive-deps
 
   const capture = () => {
@@ -93,7 +115,7 @@ export default function TourViewer({ embed, initialScene }: { embed: boolean; in
     // recarrega a cena com a nova posição
     const cfg = buildConfig(scenes, next, current);
     v.destroy(); viewer.current = window.pannellum.viewer(el.current, cfg);
-    viewer.current.on("load", () => setLoading(false));
+    viewer.current.on("load", () => { setLoading(false); if (!playingRef.current) viewer.current?.stopAutoRotate(); });
     viewer.current.on("scenechange", (id: string) => { setLoading(true); setCurrent((prev) => { history.current.push(prev); return id; }); });
     viewer.current.setYaw(yaw); viewer.current.setPitch(pitch);
     setInfo(`Seta ${current} → ${editLink} registrada em yaw ${yaw}°, pitch ${pitch}°.`);
@@ -121,6 +143,9 @@ export default function TourViewer({ embed, initialScene }: { embed: boolean; in
           ☷ Ambientes
         </button>
         <div className="tour-glass absolute bottom-3 left-1/2 z-10 flex -translate-x-1/2 items-center gap-1 rounded-full p-1">
+          <Button variant="ghost" size="icon" onClick={togglePlayback} aria-label={playing ? "Pausar movimento automático" : "Iniciar movimento automático"} title={playing ? "Pausar movimento automático" : "Iniciar movimento automático"} className="tour-ctrl">
+            {playing ? <Pause /> : <Play />}
+          </Button>
           {[
             ["←", "Voltar ao ponto anterior", back],
             ["⌂", "Voltar ao início", () => go("1")],
