@@ -52,6 +52,7 @@ export default function AdminPanorama({ sceneId, arrows, selected, placing, prev
   };
   useEffect(() => {
     let alive = true;
+    let observer: ResizeObserver | undefined;
     async function init() {
       if (!window.pannellum) await new Promise<void>((resolve, reject) => {
         if (!document.querySelector('link[data-pnlm]')) { const l = document.createElement('link'); l.rel = 'stylesheet'; l.href = '/vendor/pannellum.css'; l.dataset['pnlm'] = '1'; document.head.append(l); }
@@ -60,6 +61,8 @@ export default function AdminPanorama({ sceneId, arrows, selected, placing, prev
       const scene = scenes.find(s => s.id === sceneId); if (!alive || !el.current || !scene) return;
       viewer.current = window.pannellum.viewer(el.current, { type: 'equirectangular', panorama: scene.image, yaw: scene.yaw, pitch: scene.pitch, hfov: 100, minPitch: -62, maxPitch: 80, autoLoad: true, showControls: true, autoRotate: 0, mouseZoom: true });
       viewer.current.on('load', refresh);
+      observer = new ResizeObserver(() => viewer.current?.resize());
+      observer.observe(el.current);
       el.current.addEventListener('click', place);
     }
     const place = (e: MouseEvent) => {
@@ -68,7 +71,7 @@ export default function AdminPanorama({ sceneId, arrows, selected, placing, prev
       props.current.onPlace(Math.max(-62, Math.min(80, pitch)), ((yaw + 540) % 360) - 180);
     };
     void init();
-    return () => { alive = false; el.current?.removeEventListener('click', place); viewer.current?.destroy(); viewer.current = null; };
+    return () => { alive = false; observer?.disconnect(); el.current?.removeEventListener('click', place); viewer.current?.destroy(); viewer.current = null; };
   }, [sceneId]);
   useEffect(() => { if (!drag.current) refresh(); }, [arrows, selected, preview]);
   return <div ref={el} className={`admin-panorama ${placing ? 'placing' : ''}`} aria-label="Editor panorâmico" />;
