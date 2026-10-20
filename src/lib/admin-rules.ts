@@ -10,9 +10,9 @@ export const arrowSchema = z.object({
   tone: z.enum(['primary', 'foreground']).default('primary'), label: z.string().max(100).default(''),
 });
 export type EditableArrow = z.infer<typeof arrowSchema>;
-export const configSchema = z.array(z.object({ id: z.string(), links: z.array(arrowSchema).max(100) })).length(20).superRefine((rows, ctx) => {
+export const configSchema = z.array(z.object({ id: z.string(), links: z.array(arrowSchema).max(100) })).length(scenes.length).superRefine((rows, ctx) => {
   const ids = new Set(rows.map(s => s.id));
-  if (ids.size !== 20 || scenes.some(s => !ids.has(s.id))) ctx.addIssue({ code: 'custom', message: 'Os 20 ambientes devem ser preservados.' });
+  if (ids.size !== scenes.length || scenes.some(s => !ids.has(s.id))) ctx.addIssue({ code: 'custom', message: `Os ${scenes.length} ambientes devem ser preservados.` });
   const arrows = new Set<string>();
   for (const row of rows) for (const l of row.links) {
     if (!ids.has(l.to) || arrows.has(l.id)) ctx.addIssue({ code: 'custom', message: 'Destino inválido ou seta duplicada.' });

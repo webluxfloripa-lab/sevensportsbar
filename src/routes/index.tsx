@@ -3,6 +3,7 @@ import { lazy, Suspense } from "react";
 import { z } from "zod";
 import ogSofa from "@/assets/og-sofa.jpg.asset.json";
 import { getPublishedTour } from '@/lib/public-tour.functions';
+import { scenes } from '@/data/tour';
 
 const SITE = "https://sevensportsbar.lovable.app";
 const OG_IMAGE = `${SITE}${ogSofa.url}`;
@@ -11,7 +12,7 @@ const TourViewer = lazy(() => import("@/components/TourViewer"));
 
 const search = z.object({
   embed: z.coerce.string().optional(),
-  scene: z.coerce.number().int().min(1).max(20).optional().catch(undefined),
+  scene: z.coerce.number().int().min(1).max(scenes.length).optional().catch(undefined),
 });
 
 export const Route = createFileRoute("/")({

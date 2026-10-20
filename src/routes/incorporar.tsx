@@ -1,5 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { useEffect, useState } from "react";
+import { scenes } from "@/data/tour";
 
 export const Route = createFileRoute("/incorporar")({
   head: () => ({
@@ -31,8 +32,8 @@ function Incorporar() {
       <h1 className="mt-4 font-display text-4xl">Incorporar o tour</h1>
       <p className="mt-2 text-muted-foreground">Escolha o ambiente inicial, copie o código e cole no seu site.</p>
       <label className="mt-6 flex max-w-xs flex-col gap-1 text-sm">
-        Ambiente inicial (1 a 20)
-        <input type="number" min={1} max={20} value={scene} onChange={(e) => setScene(Math.min(20, Math.max(1, Number(e.target.value) || 1)))} className="rounded-md border border-border bg-input px-3 py-2" />
+        Ambiente inicial (1 a {scenes.length})
+        <input type="number" min={1} max={scenes.length} value={scene} onChange={(e) => setScene(Math.min(scenes.length, Math.max(1, Number(e.target.value) || 1)))} className="rounded-md border border-border bg-input px-3 py-2" />
       </label>
       <textarea readOnly value={code} aria-label="Código para incorporar" className="mt-4 h-28 w-full rounded-lg border border-border bg-card p-3 font-mono text-xs" />
       <div className="mt-2 flex items-center gap-3">

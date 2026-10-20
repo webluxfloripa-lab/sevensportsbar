@@ -2,7 +2,7 @@ import { describe, expect, it } from "vitest";
 import { scenes, sceneById } from "@/data/tour";
 
 describe("mapa do tour", () => {
-  it("tem 20 ambientes", () => expect(scenes).toHaveLength(20));
+  it("tem 21 ambientes", () => expect(scenes).toHaveLength(21));
   it("todas as setas levam a cenas existentes e têm retorno", () => {
     for (const s of scenes)
       for (const l of s.links) {
