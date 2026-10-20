@@ -1,6 +1,6 @@
 import { createFileRoute, useRouter } from '@tanstack/react-router';
 import { useServerFn } from '@tanstack/react-start';
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import { Eye, EyeOff, LockKeyhole, LogOut } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { getAdminState, loginAdmin, logoutAdmin } from '@/lib/admin.functions';
@@ -21,12 +21,6 @@ function Admin() {
   const login = useServerFn(loginAdmin), logout = useServerFn(logoutAdmin);
   const [password, setPassword] = useState(''), [visible, setVisible] = useState(false), [busy, setBusy] = useState(false), [message, setMessage] = useState('');
   const [locked, setLocked] = useState(false);
-  useEffect(() => {
-    if (!state.authenticated || !state.expiresAt) return;
-    setLocked(false);
-    const timer = setTimeout(() => { setLocked(true); setMessage('Sessão expirada. Entre novamente.'); void router.invalidate(); }, Math.max(0, state.expiresAt - Date.now()));
-    return () => clearTimeout(timer);
-  }, [state]);
   if (state.authenticated && !locked) return <main className="min-h-dvh bg-background">
     <header className="flex flex-wrap items-center justify-between gap-3 border-b border-border p-4"><div><h1 className="font-display text-2xl text-primary">Seven Sports Bar</h1><span className="text-xs text-muted-foreground">Administração do tour 360°</span></div><Button variant="outline" disabled={busy} onClick={async () => { setBusy(true); try { await logout(); setLocked(true); await router.invalidate(); } finally { setBusy(false); } }}><LogOut />Sair do painel</Button></header>
     <TourEditor initial={state.config} revision={state.revision} onExpired={() => { setLocked(true); setMessage('Sessão encerrada. Entre novamente.'); void router.invalidate(); }} />
