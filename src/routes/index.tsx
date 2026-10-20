@@ -11,7 +11,7 @@ const TourViewer = lazy(() => import("@/components/TourViewer"));
 
 const search = z.object({
   embed: z.coerce.string().optional(),
-  scene: z.coerce.number().int().min(1).max(20).optional().catch(undefined),
+  scene: z.coerce.number().int().min(1).max(scenes.length).optional().catch(undefined),
 });
 
 export const Route = createFileRoute("/")({
