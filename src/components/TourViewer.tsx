@@ -3,27 +3,10 @@ import { scenes, sceneById, type TourScene } from "@/data/tour";
 import { Button } from "@/components/ui/button";
 import { Pause, Play } from "lucide-react";
 import { tourMotion, TOUR_ROTATION_SPEED } from "@/lib/tour-motion";
+import { loadPannellum } from "@/lib/pannellum-loader";
 
 /* eslint-disable @typescript-eslint/no-explicit-any */
-declare global {
-  interface Window { pannellum?: any }
-}
 
-function loadPannellum(): Promise<any> {
-  if (window.pannellum) return Promise.resolve(window.pannellum);
-  return new Promise((resolve, reject) => {
-    if (!document.querySelector('link[data-pnlm]')) {
-      const l = document.createElement("link");
-      l.rel = "stylesheet"; l.href = "/vendor/pannellum.css"; l.setAttribute("data-pnlm", "1");
-      document.head.appendChild(l);
-    }
-    const s = document.createElement("script");
-    s.src = "/vendor/pannellum.js";
-    s.onload = () => resolve(window.pannellum);
-    s.onerror = reject;
-    document.body.appendChild(s);
-  });
-}
 
 
 function buildConfig(list: TourScene[], first: string) {
