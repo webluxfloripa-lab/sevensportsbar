@@ -14,13 +14,69 @@ export type Database = {
   }
   public: {
     Tables: {
-      [_ in never]: never
+      tour_admin_sessions: {
+        Row: {
+          expires_at: string
+          id: string
+        }
+        Insert: {
+          expires_at: string
+          id: string
+        }
+        Update: {
+          expires_at?: string
+          id?: string
+        }
+        Relationships: []
+      }
+      tour_configuration: {
+        Row: {
+          id: string
+          revision: string
+          scenes: Json
+          updated_at: string
+        }
+        Insert: {
+          id: string
+          revision?: string
+          scenes: Json
+          updated_at?: string
+        }
+        Update: {
+          id?: string
+          revision?: string
+          scenes?: Json
+          updated_at?: string
+        }
+        Relationships: []
+      }
+      tour_versions: {
+        Row: {
+          created_at: string
+          id: string
+          scenes: Json
+        }
+        Insert: {
+          created_at?: string
+          id?: string
+          scenes: Json
+        }
+        Update: {
+          created_at?: string
+          id?: string
+          scenes?: Json
+        }
+        Relationships: []
+      }
     }
     Views: {
       [_ in never]: never
     }
     Functions: {
-      [_ in never]: never
+      publish_seven_tour: {
+        Args: { expected_revision: string }
+        Returns: string
+      }
     }
     Enums: {
       [_ in never]: never

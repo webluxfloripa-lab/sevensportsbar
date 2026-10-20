@@ -25,10 +25,8 @@ function loadPannellum(): Promise<any> {
   });
 }
 
-const STORAGE = "tour360-ajustes";
-type Overrides = Record<string, { yaw: number; pitch: number }>;
 
-function buildConfig(list: TourScene[], ov: Overrides, first: string) {
+function buildConfig(list: TourScene[], first: string) {
   const sc: Record<string, any> = {};
   for (const s of list) {
     sc[s.id] = {
@@ -36,14 +34,18 @@ function buildConfig(list: TourScene[], ov: Overrides, first: string) {
       panorama: s.image,
       yaw: s.yaw, pitch: s.pitch, hfov: 100, minPitch: -62, maxPitch: 80,
       hotSpots: s.links.map((l) => {
-        const o = ov[`${s.id}>${l.to}`];
         return {
           type: "scene", sceneId: l.to,
-          yaw: o?.yaw ?? l.yaw, pitch: o?.pitch ?? l.pitch,
-          cssClass: "tour-arrow",
+          yaw: l.yaw, pitch: l.pitch,
+          cssClass: "tour-arrow published-arrow",
           createTooltipFunc: (div: HTMLElement) => {
             div.setAttribute("aria-label", `Ir para ${sceneById(l.to)?.name}`);
-            div.title = sceneById(l.to)?.name ?? "";
+            div.title = l.label || sceneById(l.to)?.name || "";
+            div.style.setProperty('--arrow-rotation', `${l.rotation ?? 0}deg`);
+            div.style.setProperty('--arrow-size', `${l.size ?? 52}px`);
+            div.style.setProperty('--arrow-opacity', String(l.opacity ?? 1));
+            div.style.setProperty('--arrow-color', `var(--${l.tone === 'foreground' ? 'foreground' : 'primary'})`);
+            div.classList.toggle('plain', l.style === 'plain');
           },
         };
       }),
@@ -53,7 +55,8 @@ function buildConfig(list: TourScene[], ov: Overrides, first: string) {
   return { default: { firstScene: first, sceneFadeDuration: reducedMotion ? 0 : 900, autoLoad: true, showControls: false, compass: false, ...tourMotion(reducedMotion), mouseZoom: "fullscreenonly" }, scenes: sc };
 }
 
-export default function TourViewer({ embed, initialScene }: { embed: boolean; initialScene: string }) {
+export default function TourViewer({ embed, initialScene, list: loadedScenes }: { embed: boolean; initialScene: string; list?: TourScene[] | null | undefined }) {
+  const list = loadedScenes ?? scenes;
   const el = useRef<HTMLDivElement>(null);
   const viewer = useRef<any>(null);
   const history = useRef<string[]>([]);
@@ -63,14 +66,8 @@ export default function TourViewer({ embed, initialScene }: { embed: boolean; in
   const [menu, setMenu] = useState(false);
   const [loading, setLoading] = useState(true);
   const [query, setQuery] = useState("");
-  const [ov, setOv] = useState<Overrides>({});
-  const [editLink, setEditLink] = useState("");
-  const [info, setInfo] = useState("");
 
   useEffect(() => {
-    let saved: Overrides = {};
-    try { saved = JSON.parse(localStorage.getItem(STORAGE) || "{}"); } catch { /* vazio */ }
-    setOv(saved);
     const preference = window.matchMedia("(prefers-reduced-motion: reduce)");
     playingRef.current = !preference.matches;
     setPlaying(playingRef.current);
@@ -84,12 +81,12 @@ export default function TourViewer({ embed, initialScene }: { embed: boolean; in
     let alive = true;
     loadPannellum().then((p) => {
       if (!alive || !el.current) return;
-      viewer.current = p.viewer(el.current, buildConfig(scenes, saved, initialScene));
+      viewer.current = p.viewer(el.current, buildConfig(list, initialScene));
       viewer.current.on("load", () => { setLoading(false); if (!playingRef.current) viewer.current?.stopAutoRotate(); });
       viewer.current.on("scenechange", (id: string) => { setLoading(true); setCurrent((prev) => { history.current.push(prev); return id; }); });
     });
     return () => { alive = false; preference.removeEventListener("change", applyPreference); viewer.current?.destroy?.(); };
-  }, [initialScene]);
+  }, [initialScene, list]);
 
   const go = (id: string) => { if (id !== current) viewer.current?.loadScene(id); setMenu(false); };
   const back = () => { const p = history.current.pop(); if (p) { viewer.current?.loadScene(p); history.current.pop(); } };
@@ -102,33 +99,7 @@ export default function TourViewer({ embed, initialScene }: { embed: boolean; in
     else viewer.current?.stopAutoRotate();
   };
 
-  const scene = sceneById(current);
-  useEffect(() => { setEditLink(scene?.links[0]?.to ?? ""); }, [current]); // eslint-disable-line react-hooks/exhaustive-deps
-
-  const capture = () => {
-    const v = viewer.current; if (!v || !editLink) return;
-    const key = `${current}>${editLink}`;
-    const yaw = Math.round(v.getYaw()), pitch = Math.round(v.getPitch());
-    const next = { ...ov, [key]: { yaw, pitch } };
-    setOv(next); localStorage.setItem(STORAGE, JSON.stringify(next));
-    v.removeHotSpot?.(undefined);
-    // recarrega a cena com a nova posição
-    const cfg = buildConfig(scenes, next, current);
-    v.destroy(); viewer.current = window.pannellum.viewer(el.current, cfg);
-    viewer.current.on("load", () => { setLoading(false); if (!playingRef.current) viewer.current?.stopAutoRotate(); });
-    viewer.current.on("scenechange", (id: string) => { setLoading(true); setCurrent((prev) => { history.current.push(prev); return id; }); });
-    viewer.current.setYaw(yaw); viewer.current.setPitch(pitch);
-    setInfo(`Seta ${current} → ${editLink} registrada em yaw ${yaw}°, pitch ${pitch}°.`);
-  };
-  const exportMap = () => {
-    const out = scenes.map((s) => ({ ...s, links: s.links.map((l) => ({ ...l, ...(ov[`${s.id}>${l.to}`] ?? {}) })) }));
-    const a = document.createElement("a");
-    a.href = URL.createObjectURL(new Blob([JSON.stringify(out, null, 2)], { type: "application/json" }));
-    a.download = "tour-ajustado.json"; a.click();
-  };
-  const reset = () => { localStorage.removeItem(STORAGE); location.reload(); };
-
-  const filtered = scenes.filter((s) => (s.name + s.group).toLowerCase().includes(query.toLowerCase()));
+  const filtered = list.filter((s) => (s.name + s.group).toLowerCase().includes(query.toLowerCase()));
 
   return (
     <>
@@ -179,24 +150,7 @@ export default function TourViewer({ embed, initialScene }: { embed: boolean; in
         )}
       </section>
 
-      {!embed && (
-        <details className="mx-auto my-8 max-w-3xl rounded-xl border border-border bg-card p-5 text-sm">
-          <summary className="cursor-pointer font-medium">Conferência do mapa e ajuste de setas</summary>
-          <p className="mt-3 text-muted-foreground">Gire a imagem até a passagem ficar no centro, escolha a conexão e posicione a seta. Os ajustes ficam neste navegador até você baixar o mapa.</p>
-          <div className="mt-4 flex flex-wrap items-end gap-2">
-            <label className="flex flex-col gap-1">
-              <span>Conexão de "{scene?.name}"</span>
-              <select value={editLink} onChange={(e) => setEditLink(e.target.value)} className="rounded-md border border-border bg-input px-3 py-2">
-                {scene?.links.map((l) => <option key={l.to} value={l.to}>→ {l.to}. {sceneById(l.to)?.name}</option>)}
-              </select>
-            </label>
-            <button onClick={capture} className="tour-btn">Posicionar seta no centro da visão</button>
-            <button onClick={exportMap} className="tour-btn-ghost">Baixar mapa ajustado</button>
-            <button onClick={reset} className="tour-btn-ghost">Descartar ajustes</button>
-          </div>
-          {info && <p className="mt-3 text-primary" role="status">{info}</p>}
-        </details>
-      )}
+
     </>
   );
 }

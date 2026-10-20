@@ -2,6 +2,7 @@ import { ClientOnly, createFileRoute, Link } from "@tanstack/react-router";
 import { lazy, Suspense } from "react";
 import { z } from "zod";
 import ogSofa from "@/assets/og-sofa.jpg.asset.json";
+import { getPublishedTour } from '@/lib/public-tour.functions';
 
 const SITE = "https://sevensportsbar.lovable.app";
 const OG_IMAGE = `${SITE}${ogSofa.url}`;
@@ -14,6 +15,7 @@ const search = z.object({
 });
 
 export const Route = createFileRoute("/")({
+  loader: () => getPublishedTour(),
   validateSearch: search,
   head: () => ({
     meta: [
@@ -38,12 +40,13 @@ export const Route = createFileRoute("/")({
 
 function Index() {
   const { embed, scene } = Route.useSearch();
+  const list = Route.useLoaderData();
   const isEmbed = embed === "1";
   const fallback = <div className={isEmbed ? "h-dvh bg-background" : "h-[78dvh] min-h-[420px] bg-background"} />;
   const viewer = (
     <ClientOnly fallback={fallback}>
       <Suspense fallback={fallback}>
-        <TourViewer embed={isEmbed} initialScene={String(scene ?? 1)} />
+        <TourViewer embed={isEmbed} initialScene={String(scene ?? 1)} list={list} />
       </Suspense>
     </ClientOnly>
   );

@@ -1,5 +1,13 @@
 {
   "version": "7",
   "dialect": "postgresql",
-  "entries": []
+  "entries": [
+    {
+      "idx": 0,
+      "version": "7",
+      "when": 1792472021114,
+      "tag": "0000_tour_admin_versions_sessions",
+      "breakpoints": true
+    }
+  ]
 }

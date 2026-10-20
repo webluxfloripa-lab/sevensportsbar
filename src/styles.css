@@ -116,3 +116,28 @@
 .pnlm-load-box, .pnlm-title-box, .pnlm-panorama-info { display: none !important; }
 
 @media (prefers-reduced-motion: reduce) { .tour-spinner { animation-duration: 3s; } }
+
+.admin-input { border: 1px solid var(--border); background: var(--input); color: var(--foreground); border-radius: 6px; padding: 10px; min-width: 0; }
+.admin-input option { background: var(--card); }
+.admin-toolbar { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; padding: 12px; border-bottom: 1px solid var(--border); }
+.admin-toolbar button { min-height: 44px; }
+.admin-workspace { display: grid; grid-template-columns: 220px minmax(0,1fr) 290px; height: 76dvh; min-height: 600px; }
+.admin-scenes, .admin-properties { padding: 14px; overflow-y: auto; background: var(--card); }
+.admin-scenes button[aria-current='true'] { background: var(--accent); color: var(--primary); }
+.admin-stage { min-width: 0; position: relative; }
+.admin-panorama { position: absolute; inset: 0; }
+.admin-panorama.placing { cursor: crosshair; }
+.pnlm-hotspot-base.admin-arrow, .pnlm-hotspot-base.published-arrow { --arrow-color: var(--primary); --arrow-size: 52px; --arrow-opacity: 1; --arrow-rotation: 0deg; width: var(--arrow-size); height: var(--arrow-size); margin: calc(var(--arrow-size) / -2); border-color: var(--arrow-color); opacity: var(--arrow-opacity); }
+.pnlm-hotspot-base.admin-arrow { touch-action: none; user-select: none; }
+.pnlm-hotspot-base.admin-arrow::after, .pnlm-hotspot-base.published-arrow::after { border-color: var(--arrow-color); transform: translate(-2px,3px) rotate(calc(-45deg + var(--arrow-rotation))); }
+.pnlm-hotspot-base.admin-arrow.selected { outline: 3px dashed var(--foreground); outline-offset: 6px; }
+.pnlm-hotspot-base.admin-arrow.plain, .pnlm-hotspot-base.published-arrow.plain { border: none; background: transparent; box-shadow: none; }
+@media (max-width: 767px) {
+  .admin-workspace { grid-template-columns: minmax(0,1fr); grid-template-rows: auto minmax(360px, 60dvh) auto; height: auto; min-height: 0; }
+  .admin-scenes { display: flex; gap: 8px; }
+  .admin-scenes input { width: 40%; }
+  .admin-scenes select { width: 60%; }
+  .admin-properties { max-height: 180px; }
+  .admin-properties.open { position: fixed; bottom: 0; left: 0; right: 0; max-height: 46dvh; z-index: 30; border-top: 2px solid var(--primary); padding-bottom: 22px; }
+  .admin-properties.open input[type='range'] { min-height: 44px; }
+}
