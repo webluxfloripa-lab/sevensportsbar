@@ -101,7 +101,7 @@ export default function AdminPanorama({ sceneId, arrows, selected, placing, prev
 
   useEffect(() => { if (!drag.current) refresh(); }, [arrows, selected, preview]);
 
-  return <div className="relative h-full w-full">
+  return <div className="absolute inset-0">
     <div ref={el} className={`admin-panorama ${placing ? 'placing' : ''}`} aria-label="Editor panorâmico" />
     {loading && !failed && <div role="status" className="pointer-events-none absolute inset-0 grid place-items-center"><span className="tour-spinner" aria-label="Carregando ambiente" /></div>}
     {failed && <div role="alert" className="absolute inset-0 grid place-items-center bg-background/80 p-6 text-center">
