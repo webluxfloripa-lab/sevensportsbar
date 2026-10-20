@@ -31,7 +31,7 @@ function buildConfig(list: TourScene[], ov: Overrides, first: string) {
     sc[s.id] = {
       type: "equirectangular",
       panorama: s.image,
-      yaw: s.yaw, pitch: s.pitch, hfov: 100,
+      yaw: s.yaw, pitch: s.pitch, hfov: 100, minPitch: -62, maxPitch: 80,
       hotSpots: s.links.map((l) => {
         const o = ov[`${s.id}>${l.to}`];
         return {
@@ -46,7 +46,7 @@ function buildConfig(list: TourScene[], ov: Overrides, first: string) {
       }),
     };
   }
-  return { default: { firstScene: first, sceneFadeDuration: 600, autoLoad: true, showControls: false, compass: false }, scenes: sc };
+  return { default: { firstScene: first, sceneFadeDuration: 600, autoLoad: true, showControls: false, compass: false, friction: 0.08, mouseZoom: "fullscreenonly", touchPanSpeedCoeffFactor: 1.2 }, scenes: sc };
 }
 
 export default function TourViewer({ embed, initialScene }: { embed: boolean; initialScene: string }) {
