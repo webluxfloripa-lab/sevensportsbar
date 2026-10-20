@@ -66,7 +66,7 @@ function Index() {
         <section className="mx-auto max-w-3xl px-4 py-10 text-center">
           <span className="text-xs uppercase tracking-[0.25em] text-primary">Um espaço. Múltiplas perspectivas.</span>
           <h1 className="mt-2 font-display text-4xl md:text-5xl">Entre e explore.</h1>
-          <p className="mt-4 text-muted-foreground">Percorra a fachada, o lounge, o salão com bar e telão, os jogos eletrônicos e as áreas com mesas de pôquer no térreo e no mezanino. São 20 pontos fotografados em 360°, com acesso direto pelo menu de ambientes.</p>
+          <p className="mt-4 text-muted-foreground">Percorra a fachada, o lounge, o salão com bar e telão, os jogos eletrônicos e as áreas com mesas de pôquer no térreo e no mezanino. São 22 pontos fotografados em 360°, com acesso direto pelo menu de ambientes.</p>
         </section>
       </main>
     </div>
