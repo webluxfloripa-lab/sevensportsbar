@@ -20,9 +20,9 @@ export const Route = createFileRoute("/")({
   validateSearch: search,
   head: () => ({
     meta: [
-      { title: "Tour Virtual 360° · 20 ambientes" },
+      { title: "Tour Virtual 360° · Seven Sports Bar" },
       { name: "description", content: "Passeie em 360° pela fachada, lounge, salão com bar, jogos e salas de pôquer no térreo e mezanino." },
-      { property: "og:title", content: "Tour Virtual 360° · 20 ambientes" },
+      { property: "og:title", content: "Tour Virtual 360° · Seven Sports Bar" },
       { property: "og:description", content: "Explore cada ambiente em visão panorâmica, direto do celular ou computador." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },

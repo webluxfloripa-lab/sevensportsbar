@@ -1,4 +1,5 @@
 # Painel Seven Sports Bar
+- [x] Melhorar foto da recepção, substituir recepção/sofá/salão e verificar conexões de ida e volta preservando demais ajustes (oito navegações verificadas).
 - [x] Sessão administrativa no servidor, segredo protegido, permanente até clicar em Sair (sem expiração nem bloqueios temporários, a pedido do proprietário).
 - [x] Editor visual de setas com toque e mouse, propriedades, histórico e importação.
 - [x] Rascunhos, versões e publicação persistentes integrados ao tour público.

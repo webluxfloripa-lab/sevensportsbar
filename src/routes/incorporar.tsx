@@ -5,9 +5,9 @@ import { scenes } from "@/data/tour";
 export const Route = createFileRoute("/incorporar")({
   head: () => ({
     meta: [
-      { title: "Incorporar o Tour 360° no seu site" },
+      { title: "Incorporar o Tour 360° · Seven Sports Bar" },
       { name: "description", content: "Gere o código para colocar o tour virtual 360° em qualquer site, com escolha do ambiente inicial." },
-      { property: "og:title", content: "Incorporar o Tour 360° no seu site" },
+      { property: "og:title", content: "Incorporar o Tour 360° · Seven Sports Bar" },
       { property: "og:description", content: "Código pronto para copiar e colar o tour panorâmico em outra página." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary" },
