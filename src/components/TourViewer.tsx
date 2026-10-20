@@ -3,27 +3,10 @@ import { scenes, sceneById, type TourScene } from "@/data/tour";
 import { Button } from "@/components/ui/button";
 import { Pause, Play } from "lucide-react";
 import { tourMotion, TOUR_ROTATION_SPEED } from "@/lib/tour-motion";
+import { loadPannellum } from "@/lib/pannellum-loader";
 
 /* eslint-disable @typescript-eslint/no-explicit-any */
-declare global {
-  interface Window { pannellum?: any }
-}
 
-function loadPannellum(): Promise<any> {
-  if (window.pannellum) return Promise.resolve(window.pannellum);
-  return new Promise((resolve, reject) => {
-    if (!document.querySelector('link[data-pnlm]')) {
-      const l = document.createElement("link");
-      l.rel = "stylesheet"; l.href = "/vendor/pannellum.css"; l.setAttribute("data-pnlm", "1");
-      document.head.appendChild(l);
-    }
-    const s = document.createElement("script");
-    s.src = "/vendor/pannellum.js";
-    s.onload = () => resolve(window.pannellum);
-    s.onerror = reject;
-    document.body.appendChild(s);
-  });
-}
 
 
 function buildConfig(list: TourScene[], first: string) {
@@ -65,6 +48,8 @@ export default function TourViewer({ embed, initialScene, list: loadedScenes }: 
   const [current, setCurrent] = useState(initialScene);
   const [menu, setMenu] = useState(false);
   const [loading, setLoading] = useState(true);
+  const [failed, setFailed] = useState(false);
+  const [attempt, setAttempt] = useState(0);
   const [query, setQuery] = useState("");
 
   useEffect(() => {
@@ -79,14 +64,20 @@ export default function TourViewer({ embed, initialScene, list: loadedScenes }: 
     };
     preference.addEventListener("change", applyPreference);
     let alive = true;
+    setFailed(false);
     loadPannellum().then((p) => {
       if (!alive || !el.current) return;
       viewer.current = p.viewer(el.current, buildConfig(list, initialScene));
       viewer.current.on("load", () => { setLoading(false); if (!playingRef.current) viewer.current?.stopAutoRotate(); });
       viewer.current.on("scenechange", (id: string) => { setLoading(true); setCurrent((prev) => { history.current.push(prev); return id; }); });
-    });
-    return () => { alive = false; preference.removeEventListener("change", applyPreference); viewer.current?.destroy?.(); };
-  }, [initialScene, list]);
+      viewer.current.on("error", () => { setLoading(false); setFailed(true); });
+    }).catch(() => { if (alive) { setLoading(false); setFailed(true); } });
+    return () => {
+      alive = false; preference.removeEventListener("change", applyPreference);
+      try { viewer.current?.destroy?.(); } catch { /* viewer already torn down */ }
+      viewer.current = null;
+    };
+  }, [initialScene, list, attempt]);
 
   const go = (id: string) => { if (id !== current) viewer.current?.loadScene(id); setMenu(false); };
   const back = () => { const p = history.current.pop(); if (p) { viewer.current?.loadScene(p); history.current.pop(); } };
@@ -108,6 +99,14 @@ export default function TourViewer({ embed, initialScene, list: loadedScenes }: 
         {loading && (
           <div role="status" className="pointer-events-none absolute inset-0 grid place-items-center">
             <span className="tour-spinner" aria-label="Carregando ambiente" />
+          </div>
+        )}
+        {failed && (
+          <div role="alert" className="absolute inset-0 z-10 grid place-items-center bg-background/80 px-6 text-center">
+            <div className="grid gap-3">
+              <p className="text-sm text-muted-foreground">Não foi possível exibir este ambiente agora.</p>
+              <Button onClick={() => { setLoading(true); setAttempt((n) => n + 1); }}>Tentar novamente</Button>
+            </div>
           </div>
         )}
         <button onClick={() => setMenu(true)} aria-expanded={menu} className="tour-glass absolute right-3 top-3 z-10 rounded-full px-4 py-2.5 text-sm font-medium">

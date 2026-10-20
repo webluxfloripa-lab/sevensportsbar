@@ -6,8 +6,16 @@ import { Button } from '@/components/ui/button';
 import { scenes } from '@/data/tour';
 import { arrowSchema, configSchema, type EditableConfig, type EditableArrow } from '@/lib/admin-rules';
 import { saveAdminTour, publishAdminTour, restoreAdminVersion, getAdminState } from '@/lib/admin.functions';
+import PanoramaBoundary from './PanoramaBoundary';
 
 const Panorama = lazy(() => import('./AdminPanorama'));
+const NO_ARROWS: EditableArrow[] = [];
+function friendlyError(e: unknown) {
+  const message = e instanceof Error ? e.message : '';
+  // Validation libraries produce technical JSON messages; never show those to the owner.
+  if (!message || message.startsWith('[') || message.startsWith('{')) return 'Não foi possível concluir. Confira os dados e tente novamente.';
+  return message;
+}
 export default function TourEditor({ initial, revision: firstRevision, onExpired }: { initial: EditableConfig; revision: string | null; onExpired: () => void }) {
   const [config, setConfig] = useState(initial), [saved, setSaved] = useState(initial);
   const [revision, setRevision] = useState(firstRevision);
@@ -33,13 +41,28 @@ export default function TourEditor({ initial, revision: firstRevision, onExpired
   const execute = async (work: () => Promise<void>) => {
     if (busy) return; setBusy(true); setStatus('Processando…');
     try { await work(); } catch (e) {
-      setStatus(e instanceof Error ? e.message : 'Não foi possível concluir.');
-      const state = await stateFn(); if (!state.authenticated) onExpired();
+      setStatus(friendlyError(e));
+      try { const state = await stateFn(); if (!state.authenticated) onExpired(); } catch { /* status already explains the failure */ }
     } finally { setBusy(false); }
   };
-  const save = () => execute(async () => { const result = await saveFn({ data: { config: configSchema.parse(config), revision } }); setRevision(result.revision); setSaved(config); setStatus('Rascunho salvo'); });
-  const publish = () => { if (dirty || !revision) { setStatus('Salve o rascunho antes de publicar.'); return; } if (!confirm('Publicar estas setas no tour público?')) return;
-    void execute(async () => { await publishFn({ data: { revision } }); setStatus('Tour publicado'); const state = await stateFn(); if (state.authenticated) setVersions(state.versions); });
+  // Persists the given snapshot as the draft and returns the new revision.
+  const persist = async (snapshot: EditableConfig) => {
+    const parsed = configSchema.safeParse(snapshot);
+    if (!parsed.success) throw new Error('Há setas com dados inválidos. Revise os ambientes antes de salvar.');
+    const result = await saveFn({ data: { config: parsed.data, revision } });
+    setRevision(result.revision); setSaved(snapshot);
+    return result.revision;
+  };
+  const save = () => execute(async () => { await persist(config); setStatus('Rascunho salvo'); });
+  const publish = () => {
+    if (!confirm(dirty || !revision ? 'Salvar as alterações e publicar estas setas no tour público?' : 'Publicar estas setas no tour público?')) return;
+    const snapshot = config;
+    void execute(async () => {
+      const current = dirty || !revision ? await persist(snapshot) : revision;
+      await publishFn({ data: { revision: current } });
+      setStatus('Tour publicado');
+      const state = await stateFn(); if (state.authenticated) setVersions(state.versions);
+    });
   };
   const exportConfig = () => execute(async () => { const state = await stateFn(); if (!state.authenticated) { onExpired(); return; } const url = URL.createObjectURL(new Blob([JSON.stringify(config, null, 2)], { type: 'application/json' })); const a = document.createElement('a'); a.href = url; a.download = 'seven-tour.json'; a.click(); URL.revokeObjectURL(url); setStatus('Configuração exportada'); });
   const importConfig = async (f?: File) => { if (!f) return; if (f.size > 1_000_000) { setStatus('Arquivo muito grande.'); return; }
@@ -61,7 +84,7 @@ export default function TourEditor({ initial, revision: firstRevision, onExpired
       <Button variant="outline" onClick={redo} disabled={!future.current.length || busy} aria-label="Refazer" title="Refazer"><Redo2 /></Button>
       <Button variant={preview ? 'secondary' : 'outline'} onClick={() => { setPreview(!preview); setPlacing(false); }}><Eye />{preview ? 'Editar' : 'Pré-visualizar'}</Button>
       <Button variant="outline" onClick={save} disabled={busy}><Save />Salvar</Button>
-      <Button onClick={publish} disabled={busy || dirty || !revision}><Send />Publicar</Button>
+      <Button onClick={publish} disabled={busy}><Send />Publicar</Button>
       <span className="text-xs text-muted-foreground" role="status">{status || (dirty ? 'Alterações pendentes' : 'Sem alterações pendentes')}</span>
     </div>
     <div className="admin-workspace">
@@ -71,9 +94,9 @@ export default function TourEditor({ initial, revision: firstRevision, onExpired
         <select aria-label="Ambiente atual" value={sceneId} onChange={e => selectScene(e.target.value)} className="admin-input w-full md:hidden">{scenes.filter(s => s.name.toLowerCase().includes(query.toLowerCase())).map(s => <option key={s.id} value={s.id}>{s.id}. {s.name}</option>)}</select>
       </aside>
       <div className="admin-stage">
-        <ClientOnly><Suspense fallback={<div role="status">Carregando ambiente…</div>}><Panorama sceneId={sceneId} arrows={row?.links ?? []} selected={selected} placing={placing} preview={preview} onSelect={setSelected} onNavigate={selectScene} onPlace={(pitch, yaw) => {
+        <ClientOnly><PanoramaBoundary resetKey={sceneId}><Suspense fallback={<div role="status" className="grid h-full place-items-center text-sm text-muted-foreground">Carregando ambiente…</div>}><Panorama sceneId={sceneId} arrows={row?.links ?? NO_ARROWS} selected={selected} placing={placing} preview={preview} onSelect={setSelected} onNavigate={selectScene} onPlace={(pitch, yaw) => {
           const id = crypto.randomUUID(); const a = arrowSchema.parse({ id, to: returnTo.current ?? scenes.find(s => s.id !== sceneId)?.id ?? '1', pitch, yaw }); returnTo.current = null; commit(config.map(s => s.id === sceneId ? { ...s, links: [...s.links, a] } : s)); setSelected(id); setPlacing(false);
-        }} onMove={(id, pitch, yaw) => commit(config.map(s => s.id === sceneId ? { ...s, links: s.links.map(a => a.id === id ? { ...a, pitch, yaw } : a) } : s))} /></Suspense></ClientOnly>
+        }} onMove={(id, pitch, yaw) => commit(config.map(s => s.id === sceneId ? { ...s, links: s.links.map(a => a.id === id ? { ...a, pitch, yaw } : a) } : s))} /></Suspense></PanoramaBoundary></ClientOnly>
       </div>
       <aside className={`admin-properties ${arrow && !preview ? 'open' : ''}`}>
         <div className="flex items-center justify-between"><h2 className="font-display text-2xl">{preview ? 'Pré-visualização' : 'Setas do ambiente'}</h2>{arrow && <Button variant="ghost" size="icon" aria-label="Fechar propriedades" onClick={() => setSelected('')}><X /></Button>}</div>

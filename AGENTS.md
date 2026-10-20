@@ -9,7 +9,8 @@
 > the editor, so keep the branch in a working state.
 <!-- LOVABLE:END -->
 
-- Tour 360: scene data lives in src/data/tour.json (CDN image URLs); Pannellum is vendored in public/vendor and loaded at runtime in the browser only, because it touches window at import.
+- Tour 360: scene data lives in src/data/tour.json (CDN image URLs); Pannellum is vendored in public/vendor and loaded once through the shared browser-only loader, because it touches window at import.
+- Change Pannellum hotspots only after the viewer's load event and keep viewer failures inside a local fallback, because hotspot calls before load throw and would blank the page.
 - Tour motion configuration lives in a browser-safe helper and is applied when creating viewers; honor reduced-motion preferences and preserve a manual playback override across scene changes.
 - Administrative access uses a server-verified shared-password encrypted cookie plus revocable database session; every privileged operation rechecks it so logout and expiry revoke access.
 - Store only editable hotspot configuration in Cloud draft/published records and append published versions; preserve original scene imagery and load only published data anonymously.
