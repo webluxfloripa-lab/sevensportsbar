@@ -1,6 +1,6 @@
 import { createFileRoute, useRouter } from '@tanstack/react-router';
 import { useServerFn } from '@tanstack/react-start';
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import { Eye, EyeOff, LockKeyhole, LogOut } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { getAdminState, loginAdmin, logoutAdmin } from '@/lib/admin.functions';
