@@ -17,6 +17,7 @@ export default function TourEditor({ initial, revision: firstRevision, onExpired
   const [versions, setVersions] = useState<{ id: string; created_at: string }[]>([]);
   const past = useRef<EditableConfig[]>([]), future = useRef<EditableConfig[]>([]);
   const file = useRef<HTMLInputElement>(null);
+  const returnTo = useRef<string | null>(null);
   const saveFn = useServerFn(saveAdminTour), publishFn = useServerFn(publishAdminTour), restoreFn = useServerFn(restoreAdminVersion), stateFn = useServerFn(getAdminState);
   const row = config.find(s => s.id === sceneId), arrow = row?.links.find(l => l.id === selected);
   const dirty = JSON.stringify(config) !== JSON.stringify(saved);
@@ -71,7 +72,7 @@ export default function TourEditor({ initial, revision: firstRevision, onExpired
       </aside>
       <div className="admin-stage">
         <ClientOnly><Suspense fallback={<div role="status">Carregando ambiente…</div>}><Panorama sceneId={sceneId} arrows={row?.links ?? []} selected={selected} placing={placing} preview={preview} onSelect={setSelected} onNavigate={selectScene} onPlace={(pitch, yaw) => {
-          const id = crypto.randomUUID(); const a = arrowSchema.parse({ id, to: scenes.find(s => s.id !== sceneId)?.id ?? '1', pitch, yaw }); commit(config.map(s => s.id === sceneId ? { ...s, links: [...s.links, a] } : s)); setSelected(id); setPlacing(false);
+          const id = crypto.randomUUID(); const a = arrowSchema.parse({ id, to: returnTo.current ?? scenes.find(s => s.id !== sceneId)?.id ?? '1', pitch, yaw }); returnTo.current = null; commit(config.map(s => s.id === sceneId ? { ...s, links: [...s.links, a] } : s)); setSelected(id); setPlacing(false);
         }} onMove={(id, pitch, yaw) => commit(config.map(s => s.id === sceneId ? { ...s, links: s.links.map(a => a.id === id ? { ...a, pitch, yaw } : a) } : s))} /></Suspense></ClientOnly>
       </div>
       <aside className={`admin-properties ${arrow && !preview ? 'open' : ''}`}>
@@ -84,7 +85,7 @@ export default function TourEditor({ initial, revision: firstRevision, onExpired
           <label className="grid gap-1 text-sm">Estilo<select className="admin-input" value={arrow.style} onChange={e => update({ style: e.target.value as EditableArrow['style'] })}><option value="circle">Circular</option><option value="plain">Sem círculo</option></select></label>
           <label className="grid gap-1 text-sm">Cor<select className="admin-input" value={arrow.tone} onChange={e => update({ tone: e.target.value as EditableArrow['tone'] })}><option value="primary">Dourada</option><option value="foreground">Clara</option></select></label>
           <div className="flex flex-wrap gap-2"><Button variant="outline" aria-label="Duplicar seta" title="Duplicar seta" onClick={() => { const a = { ...arrow, id: crypto.randomUUID(), yaw: ((arrow.yaw + 555) % 360) - 180 }; commit(config.map(s => s.id === sceneId ? { ...s, links: [...s.links, a] } : s)); setSelected(a.id); }}><Copy /></Button>
-          <Button variant="outline" onClick={() => { const dest = arrow.to; selectScene(dest); setPlacing(true); setStatus(`Selecione a posição da seta de retorno para ${sceneId}.`); }}><Plus />Retorno</Button>
+          <Button variant="outline" onClick={() => { const dest = arrow.to; returnTo.current = sceneId; selectScene(dest); setPlacing(true); setStatus(`Selecione a posição da seta de retorno para ${sceneId}.`); }}><Plus />Retorno</Button>
           <Button variant="outline" aria-label="Inverter conexão" title="Inverter conexão" onClick={() => { if (!confirm('Mover a conexão para o ambiente de destino? Ajuste sua posição depois.')) return; commit(config.map(s => s.id === sceneId ? { ...s, links: s.links.filter(a => a.id !== arrow.id) } : s.id === arrow.to ? { ...s, links: [...s.links, { ...arrow, to: sceneId }] } : s)); selectScene(arrow.to); }}><ArrowLeftRight /></Button>
           <Button variant="destructive" aria-label="Excluir seta" title="Excluir seta" onClick={() => { if (confirm('Excluir esta seta do rascunho?')) { commit(config.map(s => s.id === sceneId ? { ...s, links: s.links.filter(a => a.id !== selected) } : s)); setSelected(''); } }}><Trash2 /></Button></div>
           <Button onClick={save} disabled={busy}><Save />Salvar rascunho</Button>

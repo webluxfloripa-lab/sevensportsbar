@@ -1,6 +1,6 @@
 import raw from "./tour.json";
 
-export type TourLink = { to: string; yaw: number; pitch: number; confidence?: string; estimated?: boolean };
+export type TourLink = { to: string; yaw: number; pitch: number; confidence?: string; estimated?: boolean; id?: string; rotation?: number; size?: number; opacity?: number; style?: string; tone?: string; label?: string };
 export type TourScene = {
   id: string;
   name: string;
