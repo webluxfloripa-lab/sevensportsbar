@@ -11,12 +11,12 @@ describe('tour sem dados de carregamento', () => {
   afterEach(() => { cleanup(); delete window.pannellum; vi.unstubAllGlobals(); });
   it.each([undefined, null])('preserva os 22 ambientes quando os dados estão %s', list => {
     render(<TourViewer embed initialScene="1" list={list} />);
-    fireEvent.click(screen.getByRole('button', { name: /Ambientes/ }));
+    fireEvent.click(screen.getByRole('button', { name: /Menu de ambientes/ }));
     expect(screen.getAllByRole('img')).toHaveLength(22);
   });
   it('usa os dados publicados quando disponíveis', () => {
     render(<TourViewer embed initialScene="1" list={scenes.slice(0, 1)} />);
-    fireEvent.click(screen.getByRole('button', { name: /Ambientes/ }));
+    fireEvent.click(screen.getByRole('button', { name: /Menu de ambientes/ }));
     expect(screen.getAllByRole('img')).toHaveLength(1);
   });
 });
