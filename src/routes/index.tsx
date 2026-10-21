@@ -59,7 +59,6 @@ function Index() {
           <span className="grid h-9 w-9 place-items-center rounded-full border border-primary text-xs text-primary">360°</span>
           Seven Sports Bar · Tour Virtual
         </span>
-        <Link to="/incorporar" className="text-sm text-primary underline-offset-4 hover:underline">Incorporar ↗</Link>
       </header>
       <main>
         {viewer}
