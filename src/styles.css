@@ -73,7 +73,7 @@
   --card-foreground: var(--foreground);
   --popover: var(--card);
   --popover-foreground: var(--foreground);
-  --primary: oklch(0.8 0.11 88);
+  --primary: oklch(0.72 0.13 152);
   --primary-foreground: oklch(0.15 0 0);
   --secondary: oklch(0.25 0 0);
   --secondary-foreground: var(--foreground);
@@ -110,7 +110,7 @@
 
 /* Setas de navegação no panorama */
 .pnlm-hotspot-base.tour-arrow { width: 52px; height: 52px; margin: -26px 0 0 -26px; border-radius: 9999px; cursor: pointer;
-  background: var(--glass); border: 2px solid var(--primary); box-shadow: 0 0 0 6px oklch(0.8 0.11 88 / 18%); }
+  background: var(--glass); border: 2px solid var(--primary); box-shadow: 0 0 0 6px oklch(0.72 0.13 152 / 20%); }
 .pnlm-hotspot-base.tour-arrow::after { content: ""; position: absolute; inset: 0; margin: auto; width: 14px; height: 14px;
   border-top: 3px solid var(--primary); border-right: 3px solid var(--primary); transform: translate(-2px, 3px) rotate(-45deg); }
 .pnlm-hotspot-base.tour-arrow:hover { background: var(--primary); }

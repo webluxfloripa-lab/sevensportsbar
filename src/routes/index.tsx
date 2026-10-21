@@ -68,12 +68,6 @@ function Index() {
           <h1 className="mt-2 font-display text-5xl tracking-wide md:text-6xl">Entre e explore.</h1>
           <p className="mt-4 text-muted-foreground">Percorra a fachada, o lounge, a área do restaurante e bar, com telão e diversas TVs, o espaço de jogos eletrônicos e os ambientes dedicados ao poker.</p>
           <p className="mt-3 text-muted-foreground">É uma experiência que vai muito além do esperado.</p>
-          <button
-            onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
-            className="tour-btn mt-6 inline-flex items-center gap-2"
-          >
-            ▶ Dê o play e descubra o Seven por dentro
-          </button>
         </section>
       </main>
     </div>
