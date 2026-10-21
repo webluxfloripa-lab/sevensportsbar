@@ -1,4 +1,4 @@
-import { ClientOnly, createFileRoute, Link } from "@tanstack/react-router";
+import { ClientOnly, createFileRoute } from "@tanstack/react-router";
 import { lazy, Suspense } from "react";
 import { z } from "zod";
 import ogSofa from "@/assets/og-sofa.jpg.asset.json";
