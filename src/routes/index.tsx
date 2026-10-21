@@ -21,7 +21,7 @@ export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
       { title: "Tour Virtual 360° · Seven Sports Bar" },
-      { name: "description", content: "Passeie em 360° pela fachada, lounge, salão com bar, jogos e salas de pôquer no térreo e mezanino." },
+      { name: "description", content: "Percorra em 360° a fachada, o lounge, o restaurante e bar com telão e diversas TVs, os jogos eletrônicos e os ambientes dedicados ao poker." },
       { property: "og:title", content: "Tour Virtual 360° · Seven Sports Bar" },
       { property: "og:description", content: "Explore cada ambiente em visão panorâmica, direto do celular ou computador." },
       { property: "og:type", content: "website" },
@@ -55,18 +55,25 @@ function Index() {
   return (
     <div className="min-h-dvh bg-background text-foreground">
       <header className="flex items-center justify-between px-4 py-3 md:px-8">
-        <span className="flex items-center gap-2 font-display text-lg">
+        <span className="flex items-center gap-2 font-display text-xl tracking-wide text-primary">
           <span className="grid h-9 w-9 place-items-center rounded-full border border-primary text-xs text-primary">360°</span>
-          Tour Virtual
+          Seven Sports Bar · Tour Virtual
         </span>
         <Link to="/incorporar" className="text-sm text-primary underline-offset-4 hover:underline">Incorporar ↗</Link>
       </header>
       <main>
         {viewer}
         <section className="mx-auto max-w-3xl px-4 py-10 text-center">
-          <span className="text-xs uppercase tracking-[0.25em] text-primary">Um espaço. Múltiplas perspectivas.</span>
-          <h1 className="mt-2 font-display text-4xl md:text-5xl">Entre e explore.</h1>
-          <p className="mt-4 text-muted-foreground">Percorra a fachada, o lounge, o salão com bar e telão, os jogos eletrônicos e as áreas com mesas de pôquer no térreo e no mezanino. São 22 pontos fotografados em 360°, com acesso direto pelo menu de ambientes.</p>
+          <span className="text-xs font-semibold uppercase tracking-[0.25em] text-seven-green">O Seven, de todos os ângulos.</span>
+          <h1 className="mt-2 font-display text-5xl tracking-wide md:text-6xl">Entre e explore.</h1>
+          <p className="mt-4 text-muted-foreground">Percorra a fachada, o lounge, a área do restaurante e bar, com telão e diversas TVs, o espaço de jogos eletrônicos e os ambientes dedicados ao poker.</p>
+          <p className="mt-3 text-muted-foreground">É uma experiência que vai muito além do esperado.</p>
+          <button
+            onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+            className="tour-btn mt-6 inline-flex items-center gap-2"
+          >
+            ▶ Dê o play e descubra o Seven por dentro
+          </button>
         </section>
       </main>
     </div>
