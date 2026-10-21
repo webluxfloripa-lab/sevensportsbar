@@ -65,9 +65,10 @@ function Index() {
         {viewer}
         <section className="mx-auto max-w-3xl px-4 py-10 text-center">
           <span className="text-xs font-semibold uppercase tracking-[0.25em] text-seven-green">O Seven, de todos os ângulos.</span>
-          <h1 className="mt-2 font-display text-5xl tracking-wide md:text-6xl">Entre e explore.</h1>
-          <p className="mt-4 text-muted-foreground">Percorra a fachada, o lounge, a área do restaurante e bar, com telão e diversas TVs, o espaço de jogos eletrônicos e os ambientes dedicados ao poker.</p>
-          <p className="mt-3 text-muted-foreground">É uma experiência que vai muito além do esperado.</p>
+          <h1 className="mt-2 font-display text-5xl tracking-wide text-seven-green md:text-6xl">Entre e explore.</h1>
+          <p className="mt-4 text-seven-green">Percorra a fachada, o lounge, a área do restaurante e bar, com telão e diversas TVs, o espaço de jogos eletrônicos e os ambientes dedicados ao poker.</p>
+          <p className="mt-3 text-seven-green">É uma experiência que vai muito além do esperado.</p>
+          <p className="mt-3 font-semibold text-seven-green">Dê o play e descubra o Seven por dentro.</p>
         </section>
       </main>
     </div>
