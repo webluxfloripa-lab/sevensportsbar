@@ -16,3 +16,5 @@
   - Conferir na foto: Telão (5) → Bar (seguir o corredor do balcão), Bar (10) → Lounge (hoje passa por cima das mesas altas), Simulador (6) → Telão, Air hockey (8) → Simulador.
   - Mezanino · corredor central (16) tem uma seta criada no painel que leva à Fachada (1); confirmar com o proprietário.
   - A página inicial ainda diz "20 pontos"; o tour tem 22.
+- [x] Feedback do marketing: fundo preto, marca em dourado, destaque em verde Seven, fonte esportiva (Bebas Neue + Barlow), texto novo da página inicial, botão "Menu de ambientes" em destaque, miniatura nova da Entrada coberta.
+- [ ] Foto principal da Entrada coberta (ambiente 2) em tamanho original: o arquivo enviado era só a miniatura (320×160); aguardando a foto completa para substituir a imagem 360°.
