@@ -3,6 +3,19 @@ import { scenes, sceneById } from "@/data/tour";
 
 describe("mapa do tour", () => {
   it("tem 22 ambientes", () => expect(scenes).toHaveLength(22));
+  it("recupera o acesso ao telão pelo bar e preserva o retorno", () => {
+    expect(sceneById('10')?.links.some(l => l.to === '5')).toBe(true);
+    expect(sceneById('5')?.links.some(l => l.to === '10')).toBe(true);
+  });
+  it("mantém pelo menos 19 graus entre os retornos do salão à recepção e ao lounge", () => {
+    const links = sceneById('4')?.links ?? [];
+    const reception = links.find(l => l.to === '21');
+    const lounge = links.find(l => l.to === '3');
+    expect(reception).toBeDefined();
+    expect(lounge).toBeDefined();
+    if (!reception || !lounge) return;
+    expect(Math.abs(reception.yaw - lounge.yaw)).toBeGreaterThanOrEqual(19);
+  });
   it("a entrada leva à recepção e permite voltar", () => {
     expect(sceneById('2')?.links.some(l => l.to === '21')).toBe(true);
     expect(sceneById('21')?.links.some(l => l.to === '2')).toBe(true);

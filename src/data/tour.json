@@ -10,15 +10,16 @@
   "pitch": 0,
   "links": [
    {
-    "to": "2",
-    "yaw": -39.59932246867112,
-    "size": 38,
-    "tone": "primary",
+    "id": "1-0",
     "label": "",
-    "pitch": -13.9,
-    "style": "circle",
     "opacity": 0.75,
-    "rotation": -7
+    "pitch": -13.9,
+    "rotation": -7,
+    "size": 38,
+    "style": "circle",
+    "to": "2",
+    "tone": "primary",
+    "yaw": -24.8
    }
   ]
  },
@@ -33,26 +34,28 @@
   "pitch": 0,
   "links": [
    {
-    "to": "1",
-    "yaw": 155,
-    "size": 52,
-    "tone": "primary",
+    "id": "2-0",
     "label": "",
-    "pitch": -15,
-    "style": "circle",
     "opacity": 1,
-    "rotation": 0
+    "pitch": -15,
+    "rotation": 0,
+    "size": 52,
+    "style": "circle",
+    "to": "1",
+    "tone": "primary",
+    "yaw": 155
    },
    {
-    "to": "21",
-    "yaw": 8,
-    "size": 52,
-    "tone": "primary",
+    "id": "2-1",
     "label": "",
-    "pitch": -15,
-    "style": "circle",
     "opacity": 1,
-    "rotation": 0
+    "pitch": -15,
+    "rotation": 0,
+    "size": 52,
+    "style": "circle",
+    "to": "21",
+    "tone": "primary",
+    "yaw": 8
    }
   ]
  },
@@ -67,49 +70,52 @@
   "pitch": 0,
   "links": [
    {
-    "to": "10",
-    "yaw": 132.4191529427094,
-    "size": 52,
-    "tone": "primary",
+    "id": "3-0",
     "label": "",
-    "pitch": -10.189812701086625,
-    "style": "circle",
     "opacity": 1,
-    "rotation": 0
+    "pitch": -10.189812701086625,
+    "rotation": 0,
+    "size": 52,
+    "style": "circle",
+    "to": "10",
+    "tone": "primary",
+    "yaw": 132.4191529427094
    },
    {
-    "to": "21",
-    "yaw": -168,
+    "id": "3-1",
+    "label": "",
+    "opacity": 1,
     "pitch": -14,
     "rotation": 0,
     "size": 52,
-    "opacity": 1,
     "style": "circle",
+    "to": "21",
     "tone": "primary",
-    "label": ""
+    "yaw": -168
    },
    {
-    "to": "19",
-    "yaw": -152,
+    "id": "3-2",
+    "label": "",
+    "opacity": 1,
     "pitch": -10,
     "rotation": 90,
     "size": 52,
-    "opacity": 1,
     "style": "circle",
+    "to": "19",
     "tone": "primary",
-    "label": ""
+    "yaw": -152
    },
    {
     "id": "3-to-4",
-    "to": "4",
-    "yaw": 110,
+    "label": "",
+    "opacity": 1,
     "pitch": -15,
     "rotation": 0,
     "size": 52,
-    "opacity": 1,
     "style": "circle",
+    "to": "4",
     "tone": "primary",
-    "label": ""
+    "yaw": 110
    }
   ]
  },
@@ -118,21 +124,34 @@
   "name": "Salão · mesas frontais",
   "group": "Térreo",
   "source": "17265.jpg",
-  "image": "/__l5e/assets-v1/f4f8c743-9798-4828-af4e-697ac9f34d21/salao-seven-dourado.jpg",
-  "thumb": "/__l5e/assets-v1/608b2f76-1cf7-41f9-b853-9eae0a2b5522/salao-atual-thumb.jpg",
+  "image": "/__l5e/assets-v1/78d91324-725f-4a0c-830d-ca5cce9d97cc/04.jpg",
+  "thumb": "/__l5e/assets-v1/959b60bc-ead6-4f19-a8d2-f3c930a70056/04-thumb.jpg",
   "yaw": 0,
   "pitch": 0,
   "links": [
    {
+    "id": "4-to-3",
+    "label": "",
+    "opacity": 1,
+    "pitch": -14,
+    "rotation": 0,
+    "size": 52,
+    "style": "circle",
+    "to": "3",
+    "tone": "primary",
+    "yaw": -120
+   },
+   {
     "to": "21",
-    "yaw": -128,
+    "yaw": -139,
     "size": 52,
     "tone": "primary",
     "label": "",
-    "pitch": -24,
+    "pitch": -28,
     "style": "circle",
     "opacity": 1,
-    "rotation": -45
+    "rotation": -45,
+    "id": "4-restored-21"
    },
    {
     "to": "10",
@@ -143,19 +162,8 @@
     "pitch": -14.570666668239443,
     "style": "circle",
     "opacity": 1,
-    "rotation": 0
-   },
-   {
-    "id": "4-to-3",
-    "to": "3",
-    "yaw": -120,
-    "pitch": -14,
     "rotation": 0,
-    "size": 52,
-    "opacity": 1,
-    "style": "circle",
-    "tone": "primary",
-    "label": ""
+    "id": "4-restored-10"
    }
   ]
  },
@@ -164,11 +172,23 @@
   "name": "Salão · telão",
   "group": "Térreo",
   "source": "17255.jpg",
-  "image": "/__l5e/assets-v1/49ef5f8d-6ecf-4289-85bd-d0f8ea4c9513/05-seven-dourado.jpg",
-  "thumb": "/__l5e/assets-v1/43924e49-3829-4c1b-bc35-e88d02813028/05-thumb.jpg",
+  "image": "/__l5e/assets-v1/498b383d-e851-4f15-bfa1-9053b1a54ace/salao-telao-original.jpg",
+  "thumb": "/__l5e/assets-v1/ab4f13a5-6b69-4c76-a4ab-d3b95946674c/salao-telao-original-thumb.jpg",
   "yaw": 0,
   "pitch": 0,
   "links": [
+   {
+    "id": "5-1",
+    "label": "",
+    "opacity": 1,
+    "pitch": -12,
+    "rotation": 0,
+    "size": 52,
+    "style": "circle",
+    "to": "6",
+    "tone": "primary",
+    "yaw": -92.08537027633594
+   },
    {
     "to": "10",
     "yaw": 125,
@@ -178,18 +198,8 @@
     "pitch": -15,
     "style": "circle",
     "opacity": 1,
-    "rotation": 0
-   },
-   {
-    "to": "6",
-    "yaw": -80,
-    "size": 52,
-    "tone": "primary",
-    "label": "",
-    "pitch": -12,
-    "style": "circle",
-    "opacity": 1,
-    "rotation": 0
+    "rotation": 0,
+    "id": "5-restored-10"
    }
   ]
  },
@@ -204,42 +214,52 @@
   "pitch": 0,
   "links": [
    {
-    "to": "5",
-    "yaw": 125,
-    "size": 52,
-    "tone": "primary",
+    "id": "6-0",
     "label": "",
+    "opacity": 1,
     "pitch": -14,
+    "rotation": 0,
+    "size": 52,
     "style": "circle",
-    "opacity": 1,
-    "rotation": 0
+    "to": "5",
+    "tone": "primary",
+    "yaw": 125
    },
    {
+    "id": "6-1",
+    "label": "",
+    "opacity": 1,
+    "pitch": -12,
+    "rotation": 0,
+    "size": 52,
+    "style": "circle",
     "to": "8",
-    "yaw": -145,
-    "size": 52,
     "tone": "primary",
-    "label": "",
-    "pitch": -16,
-    "style": "circle",
-    "opacity": 1,
-    "rotation": 0
+    "yaw": -145
    },
    {
-    "to": "15",
-    "yaw": -78,
-    "size": 52,
-    "tone": "primary",
+    "id": "6-2",
     "label": "",
+    "opacity": 1,
     "pitch": 4,
+    "rotation": 0,
+    "size": 52,
     "style": "circle",
-    "opacity": 1,
-    "rotation": 0
+    "to": "15",
+    "tone": "primary",
+    "yaw": -78
    },
    {
+    "id": "6-3",
+    "label": "",
+    "opacity": 1,
+    "pitch": -8,
+    "rotation": 0,
+    "size": 52,
+    "style": "circle",
     "to": "22",
-    "yaw": 0,
-    "pitch": -8
+    "tone": "primary",
+    "yaw": 0
    }
   ]
  },
@@ -254,26 +274,28 @@
   "pitch": 0,
   "links": [
    {
-    "to": "8",
-    "yaw": 112,
-    "size": 52,
-    "tone": "primary",
+    "id": "7-0",
     "label": "",
-    "pitch": -25,
-    "style": "circle",
     "opacity": 1,
-    "rotation": 0
+    "pitch": -15,
+    "rotation": 0,
+    "size": 52,
+    "style": "circle",
+    "to": "8",
+    "tone": "primary",
+    "yaw": 110
    },
    {
-    "to": "9",
-    "yaw": 178,
-    "size": 52,
-    "tone": "primary",
+    "id": "7-1",
     "label": "",
-    "pitch": -16,
-    "style": "circle",
     "opacity": 1,
-    "rotation": 0
+    "pitch": -12,
+    "rotation": 0,
+    "size": 52,
+    "style": "circle",
+    "to": "9",
+    "tone": "primary",
+    "yaw": -125
    }
   ]
  },
@@ -288,37 +310,40 @@
   "pitch": 0,
   "links": [
    {
+    "id": "8-0",
+    "label": "",
+    "opacity": 1,
+    "pitch": -12,
+    "rotation": 0,
+    "size": 52,
+    "style": "circle",
     "to": "6",
-    "yaw": -90,
-    "size": 52,
     "tone": "primary",
-    "label": "",
-    "pitch": -14,
-    "style": "circle",
-    "opacity": 1,
-    "rotation": 0
+    "yaw": -90
    },
    {
+    "id": "8-1",
+    "label": "",
+    "opacity": 1,
+    "pitch": -12,
+    "rotation": 0,
+    "size": 52,
+    "style": "circle",
     "to": "7",
-    "yaw": 145,
-    "size": 52,
     "tone": "primary",
-    "label": "",
-    "pitch": -22,
-    "style": "circle",
-    "opacity": 1,
-    "rotation": 0
+    "yaw": 150
    },
    {
-    "to": "9",
-    "yaw": 50,
-    "size": 52,
-    "tone": "primary",
+    "id": "8-2",
     "label": "",
-    "pitch": -20,
-    "style": "circle",
     "opacity": 1,
-    "rotation": 0
+    "pitch": -10,
+    "rotation": 0,
+    "size": 52,
+    "style": "circle",
+    "to": "9",
+    "tone": "primary",
+    "yaw": 50
    }
   ]
  },
@@ -333,26 +358,28 @@
   "pitch": 0,
   "links": [
    {
-    "to": "8",
-    "yaw": -110,
-    "size": 52,
-    "tone": "primary",
+    "id": "9-0",
     "label": "",
-    "pitch": -24,
-    "style": "circle",
     "opacity": 1,
-    "rotation": 0
+    "pitch": -15,
+    "rotation": 0,
+    "size": 52,
+    "style": "circle",
+    "to": "8",
+    "tone": "primary",
+    "yaw": -110
    },
    {
-    "to": "7",
-    "yaw": 165,
-    "size": 52,
-    "tone": "primary",
+    "id": "9-1",
     "label": "",
-    "pitch": -16,
-    "style": "circle",
     "opacity": 1,
-    "rotation": 0
+    "pitch": -12,
+    "rotation": 0,
+    "size": 52,
+    "style": "circle",
+    "to": "7",
+    "tone": "primary",
+    "yaw": 115
    }
   ]
  },
@@ -361,43 +388,46 @@
   "name": "Bar e salão",
   "group": "Térreo",
   "source": "17266.jpg",
-  "image": "/__l5e/assets-v1/5d6fd2c7-ea7e-48ad-832b-6f73f8ad19f3/10-seven-dourado.jpg",
+  "image": "/__l5e/assets-v1/be936d10-1248-49ee-ab8c-c26e6ccafa9c/10.jpg",
   "thumb": "/__l5e/assets-v1/db99bfc5-8b32-4cb1-b3f2-f65007e7b20f/10-thumb.jpg",
   "yaw": 0,
   "pitch": 0,
   "links": [
    {
+    "id": "10-0",
+    "label": "",
+    "opacity": 1,
+    "pitch": -14,
+    "rotation": 0,
+    "size": 52,
+    "style": "circle",
     "to": "4",
-    "yaw": 118,
-    "size": 52,
     "tone": "primary",
-    "label": "",
-    "pitch": -14,
-    "style": "circle",
-    "opacity": 1,
-    "rotation": 0
+    "yaw": 90
    },
    {
-    "to": "3",
-    "yaw": -140,
-    "size": 52,
-    "tone": "primary",
+    "id": "10-1",
     "label": "",
+    "opacity": 1,
     "pitch": -12,
+    "rotation": 0,
+    "size": 52,
     "style": "circle",
-    "opacity": 1,
-    "rotation": 0
+    "to": "3",
+    "tone": "primary",
+    "yaw": -140
    },
    {
-    "to": "5",
-    "yaw": -15,
-    "size": 52,
-    "tone": "primary",
+    "id": "10-2",
     "label": "",
-    "pitch": -14,
-    "style": "circle",
     "opacity": 1,
-    "rotation": 0
+    "pitch": -14,
+    "rotation": 0,
+    "size": 52,
+    "style": "circle",
+    "to": "5",
+    "tone": "primary",
+    "yaw": -15
    }
   ]
  },
@@ -412,26 +442,28 @@
   "pitch": 0,
   "links": [
    {
-    "to": "18",
-    "yaw": 60,
-    "size": 52,
-    "tone": "primary",
+    "id": "11-0",
     "label": "",
-    "pitch": -12,
-    "style": "circle",
     "opacity": 1,
-    "rotation": 180
+    "pitch": -12,
+    "rotation": 180,
+    "size": 52,
+    "style": "circle",
+    "to": "18",
+    "tone": "primary",
+    "yaw": 60
    },
    {
-    "to": "13",
-    "yaw": -95,
-    "size": 52,
-    "tone": "primary",
+    "id": "11-1",
     "label": "",
-    "pitch": 10,
-    "style": "circle",
     "opacity": 1,
-    "rotation": 0
+    "pitch": 10,
+    "rotation": 0,
+    "size": 52,
+    "style": "circle",
+    "to": "13",
+    "tone": "primary",
+    "yaw": -95
    }
   ]
  },
@@ -446,15 +478,16 @@
   "pitch": 0,
   "links": [
    {
-    "to": "13",
-    "yaw": -90,
-    "size": 52,
-    "tone": "primary",
+    "id": "12-0",
     "label": "",
-    "pitch": -12,
-    "style": "circle",
     "opacity": 1,
-    "rotation": 0
+    "pitch": -12,
+    "rotation": 0,
+    "size": 52,
+    "style": "circle",
+    "to": "13",
+    "tone": "primary",
+    "yaw": -90
    }
   ]
  },
@@ -469,37 +502,40 @@
   "pitch": 0,
   "links": [
    {
+    "id": "13-0",
+    "label": "",
+    "opacity": 1,
+    "pitch": -19.6,
+    "rotation": 0,
+    "size": 52,
+    "style": "circle",
     "to": "16",
-    "yaw": 162,
-    "size": 52,
     "tone": "primary",
-    "label": "",
-    "pitch": -22,
-    "style": "circle",
-    "opacity": 1,
-    "rotation": 0
+    "yaw": 175.5
    },
    {
+    "id": "13-1",
+    "label": "",
+    "opacity": 1,
+    "pitch": -12,
+    "rotation": 0,
+    "size": 52,
+    "style": "circle",
     "to": "12",
-    "yaw": 22,
-    "size": 52,
     "tone": "primary",
-    "label": "",
-    "pitch": -29,
-    "style": "circle",
-    "opacity": 1,
-    "rotation": 0
+    "yaw": 25
    },
    {
-    "to": "11",
-    "yaw": -50,
-    "size": 52,
-    "tone": "primary",
+    "id": "13-2",
     "label": "",
-    "pitch": -22,
-    "style": "circle",
     "opacity": 1,
-    "rotation": 0
+    "pitch": -20,
+    "rotation": 0,
+    "size": 52,
+    "style": "circle",
+    "to": "11",
+    "tone": "primary",
+    "yaw": -70
    }
   ]
  },
@@ -514,26 +550,28 @@
   "pitch": 0,
   "links": [
    {
-    "to": "19",
-    "yaw": 178,
-    "size": 52,
-    "tone": "primary",
+    "id": "14-0",
     "label": "",
-    "pitch": -8,
-    "style": "circle",
     "opacity": 1,
-    "rotation": 0
+    "pitch": -8,
+    "rotation": 0,
+    "size": 52,
+    "style": "circle",
+    "to": "19",
+    "tone": "primary",
+    "yaw": 178
    },
    {
-    "to": "18",
-    "yaw": -105,
-    "size": 52,
-    "tone": "primary",
+    "id": "14-1",
     "label": "",
-    "pitch": -12,
-    "style": "circle",
     "opacity": 1,
-    "rotation": 0
+    "pitch": -12,
+    "rotation": 0,
+    "size": 52,
+    "style": "circle",
+    "to": "18",
+    "tone": "primary",
+    "yaw": -105
    }
   ]
  },
@@ -548,26 +586,28 @@
   "pitch": 0,
   "links": [
    {
-    "to": "6",
-    "yaw": 146,
-    "size": 52,
-    "tone": "primary",
+    "id": "15-0",
     "label": "",
-    "pitch": -29,
-    "style": "circle",
     "opacity": 1,
-    "rotation": 0
+    "pitch": -20,
+    "rotation": 0,
+    "size": 52,
+    "style": "circle",
+    "to": "6",
+    "tone": "primary",
+    "yaw": 145
    },
    {
-    "to": "17",
-    "yaw": -65,
-    "size": 52,
-    "tone": "primary",
+    "id": "15-1",
     "label": "",
-    "pitch": -27,
-    "style": "circle",
     "opacity": 1,
-    "rotation": 0
+    "pitch": -27.1,
+    "rotation": 0,
+    "size": 52,
+    "style": "circle",
+    "to": "17",
+    "tone": "primary",
+    "yaw": -52.7
    }
   ]
  },
@@ -582,26 +622,28 @@
   "pitch": 0,
   "links": [
    {
-    "to": "17",
-    "yaw": 137,
-    "size": 52,
-    "tone": "primary",
+    "id": "16-0",
     "label": "",
-    "pitch": -22,
-    "style": "circle",
     "opacity": 1,
-    "rotation": 0
+    "pitch": -25.2,
+    "rotation": 0,
+    "size": 52,
+    "style": "circle",
+    "to": "17",
+    "tone": "primary",
+    "yaw": 144.6
    },
    {
-    "to": "13",
-    "yaw": -47,
-    "size": 52,
-    "tone": "primary",
+    "id": "16-1",
     "label": "",
-    "pitch": -22,
-    "style": "circle",
     "opacity": 1,
-    "rotation": 0
+    "pitch": -12,
+    "rotation": 0,
+    "size": 52,
+    "style": "circle",
+    "to": "13",
+    "tone": "primary",
+    "yaw": -75
    }
   ]
  },
@@ -616,26 +658,28 @@
   "pitch": 0,
   "links": [
    {
-    "to": "15",
-    "yaw": -106,
-    "size": 52,
-    "tone": "primary",
+    "id": "17-0",
     "label": "",
-    "pitch": -29,
-    "style": "circle",
     "opacity": 1,
-    "rotation": 0
+    "pitch": -34.2,
+    "rotation": 0,
+    "size": 52,
+    "style": "circle",
+    "to": "15",
+    "tone": "primary",
+    "yaw": -98.5
    },
    {
-    "to": "16",
-    "yaw": 36,
-    "size": 52,
-    "tone": "primary",
+    "id": "17-1",
     "label": "",
-    "pitch": -18,
-    "style": "circle",
     "opacity": 1,
-    "rotation": 0
+    "pitch": -10,
+    "rotation": 0,
+    "size": 52,
+    "style": "circle",
+    "to": "16",
+    "tone": "primary",
+    "yaw": 10
    }
   ]
  },
@@ -650,37 +694,40 @@
   "pitch": 0,
   "links": [
    {
+    "id": "18-0",
+    "label": "",
+    "opacity": 1,
+    "pitch": -10,
+    "rotation": 90,
+    "size": 52,
+    "style": "circle",
     "to": "14",
-    "yaw": -145,
-    "size": 52,
     "tone": "primary",
-    "label": "",
-    "pitch": -10,
-    "style": "circle",
-    "opacity": 1,
-    "rotation": 90
+    "yaw": -145
    },
    {
+    "id": "18-1",
+    "label": "",
+    "opacity": 1,
+    "pitch": -10,
+    "rotation": 0,
+    "size": 52,
+    "style": "circle",
     "to": "11",
-    "yaw": 168,
-    "size": 52,
     "tone": "primary",
-    "label": "",
-    "pitch": -10,
-    "style": "circle",
-    "opacity": 1,
-    "rotation": 0
+    "yaw": 168
    },
    {
-    "to": "20",
-    "yaw": 65,
-    "size": 52,
-    "tone": "primary",
+    "id": "18-2",
     "label": "",
-    "pitch": -12,
-    "style": "circle",
     "opacity": 1,
-    "rotation": 0
+    "pitch": -12,
+    "rotation": 0,
+    "size": 52,
+    "style": "circle",
+    "to": "20",
+    "tone": "primary",
+    "yaw": 65
    }
   ]
  },
@@ -695,26 +742,28 @@
   "pitch": 0,
   "links": [
    {
-    "to": "3",
-    "yaw": 145,
-    "size": 52,
-    "tone": "primary",
+    "id": "19-0",
     "label": "",
-    "pitch": -12,
-    "style": "circle",
     "opacity": 1,
-    "rotation": 0
+    "pitch": -12,
+    "rotation": 0,
+    "size": 52,
+    "style": "circle",
+    "to": "3",
+    "tone": "primary",
+    "yaw": 145
    },
    {
-    "to": "14",
-    "yaw": -45,
-    "size": 52,
-    "tone": "primary",
+    "id": "19-1",
     "label": "",
-    "pitch": -12,
-    "style": "circle",
     "opacity": 1,
-    "rotation": 0
+    "pitch": -12,
+    "rotation": 0,
+    "size": 52,
+    "style": "circle",
+    "to": "14",
+    "tone": "primary",
+    "yaw": -45
    }
   ]
  },
@@ -729,15 +778,16 @@
   "pitch": 0,
   "links": [
    {
-    "to": "18",
-    "yaw": 110,
-    "size": 52,
-    "tone": "primary",
+    "id": "20-0",
     "label": "",
-    "pitch": -12,
-    "style": "circle",
     "opacity": 1,
-    "rotation": 0
+    "pitch": -12,
+    "rotation": 0,
+    "size": 52,
+    "style": "circle",
+    "to": "18",
+    "tone": "primary",
+    "yaw": 110
    }
   ]
  },
@@ -752,37 +802,40 @@
   "pitch": 0,
   "links": [
    {
-    "to": "3",
-    "yaw": -1,
+    "id": "21-0",
+    "label": "",
+    "opacity": 1,
     "pitch": -14,
     "rotation": 0,
     "size": 52,
-    "opacity": 1,
     "style": "circle",
+    "to": "3",
     "tone": "primary",
-    "label": ""
+    "yaw": -1
    },
    {
-    "to": "2",
-    "yaw": -115,
+    "id": "21-1",
+    "label": "",
+    "opacity": 1,
     "pitch": -12,
     "rotation": 0,
     "size": 52,
-    "opacity": 1,
     "style": "circle",
+    "to": "2",
     "tone": "primary",
-    "label": ""
+    "yaw": -115
    },
    {
-    "to": "4",
-    "yaw": 22,
+    "id": "21-2",
+    "label": "",
+    "opacity": 1,
     "pitch": -29,
     "rotation": 45,
     "size": 52,
-    "opacity": 1,
     "style": "circle",
+    "to": "4",
     "tone": "primary",
-    "label": ""
+    "yaw": 22
    }
   ]
  },
@@ -797,10 +850,16 @@
   "pitch": 0,
   "links": [
    {
+    "id": "22-0",
+    "label": "",
+    "opacity": 1,
+    "pitch": -10,
+    "rotation": 0,
+    "size": 52,
+    "style": "circle",
     "to": "6",
-    "yaw": 134,
-    "pitch": -15,
-    "rotation": 0
+    "tone": "primary",
+    "yaw": -120
    }
   ]
  }

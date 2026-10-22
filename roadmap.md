@@ -1,4 +1,5 @@
 # Painel Seven Sports Bar
+- [x] Salão · telão (5) substituído pelo anexo com futebol; fotos anteriores às edições douradas restauradas no salão/bar; conexões 4→21, 4→10 e 5→10 recuperadas; retornos verificados ao vivo, setas próximas afastadas, 20 testes aprovados e celular sem transbordamento. As fotos originais 4 e 10 exibem a marca nas telas, não futebol; não inventar imagens de partidas.
 - [x] Melhorar foto da recepção, substituir recepção/sofá/salão e verificar conexões de ida e volta preservando demais ajustes (oito navegações verificadas).
 - [x] Sessão administrativa no servidor, segredo protegido, permanente até clicar em Sair (sem expiração nem bloqueios temporários, a pedido do proprietário).
 - [x] Editor visual de setas com toque e mouse, propriedades, histórico e importação.
