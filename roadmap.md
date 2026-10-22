@@ -1,4 +1,5 @@
 # Painel Seven Sports Bar
+- [ ] Substituir Salão · telão (5) pelo anexo; restaurar fotos originais com futebol apenas no salão/bar que mostram o telão; recuperar conexão excluída e verificar espaçamento e fluidez.
 - [x] Melhorar foto da recepção, substituir recepção/sofá/salão e verificar conexões de ida e volta preservando demais ajustes (oito navegações verificadas).
 - [x] Sessão administrativa no servidor, segredo protegido, permanente até clicar em Sair (sem expiração nem bloqueios temporários, a pedido do proprietário).
 - [x] Editor visual de setas com toque e mouse, propriedades, histórico e importação.
