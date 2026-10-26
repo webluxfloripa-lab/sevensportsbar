@@ -1,0 +1,511 @@
+{
+  "meta": {
+    "name": "Sevensportsbar",
+    "package": "@ws-finjt0mddapaz6jgfrhz/647afb2c-1c8e-48f4-a17a-dfe9eeaaf39a",
+    "version": "1.0.0",
+    "framework": "react",
+    "css_framework": "tailwind",
+    "starter_template": "custom_design_system_tailwind",
+    "theme_files": [
+      "src/styles.css"
+    ],
+    "source_type": "local",
+    "source_manifest": {
+      "#enrichment": "f9b95fb12f282095738fd0e7264e9f29f003fc57cd975aa5c7486d23750249be",
+      ".gitignore": "6d9e901a692b46a83707c245fb03bc91",
+      ".lovable/plan/correção-das-setas-área-dos-jogos-7-8-9-e-mezanino-2026-10-20.md": "a1917ab417c6ade50602a03f5ad6b45b",
+      ".lovable/plan/recriar-o-tour-virtual-360-20-ambientes-2026-10-20.md": "c086b20814233e3e6614c4b2bece60c5",
+      ".lovable/plan/texto-verde-seven-logo-nas-tvs-e-no-telão-2026-10-21.md": "77f065895a992959a05cb8674fb37086",
+      ".lovable/project.json": "ad60a410ef7fc7b7dc703f91d5be753a",
+      ".prettierignore": "7279a476f196a2da5f7edd18db568dc6",
+      ".prettierrc": "185ef0234746ab738ac1ab6cec5e2bd9",
+      "AGENTS.md": "13ac0f9c29964b99f9d7d176a185e0ac",
+      "README.md": "15ccc2c959c0bff2136261ce044c418f",
+      "bunfig.toml": "44f440fc23b426e3176ee72e92f8f9f0",
+      "components.json": "30d3d035361ce807021f5c54620962e9",
+      "drizzle.config.ts": "c2b6029fa56b49433380b7263b06e3f7",
+      "drizzle/migrations/0000_tour_admin_versions_sessions.sql": "90440b6289ef2ed3505d0efbdcd6b60b",
+      "drizzle/migrations/meta/0000_snapshot.json": "81a3f4aafd849f52bee968703d4ca513",
+      "drizzle/migrations/meta/_journal.json": "ede89b221bc5a28b5b7fb4a3db4d9b05",
+      "drizzle/schema.ts": "a60267d05d7dd11572f02686241f37c6",
+      "eslint.config.js": "345bdd57e188e0e4525edcd00e5003f5",
+      "package.json": "3fef10f2df8e01080e0863506bff434c",
+      "public/favicon.ico": "9f504444f85a5af2eef9264b02ae40be",
+      "public/robots.txt": "5e0bd1c281a62a380d7a948085bfe2d1",
+      "public/vendor/LICENSE-pannellum.txt": "f9cc2991b5cf8165fa9bb1c222e310ef",
+      "public/vendor/pannellum.css": "5c2df7d523773c47d9256adf8a95e44d",
+      "public/vendor/pannellum.js": "139c7541b641d16b5fe87f95e9c49153",
+      "roadmap.md": "92b5d33a171f38ab5838215015256911",
+      "src/assets/02-thumb.jpg.asset.json": "90d8eb25194aa1106ad79b36044c8353",
+      "src/assets/02.jpg.asset.json": "89b5346a701c459cbd24c6983653777f",
+      "src/assets/05-seven-dourado.jpg.asset.json": "8a6ba91a0567e153c24de23e2c8fc3bb",
+      "src/assets/06-thumb.jpg.asset.json": "e2557d60d95917a99797dde17ee35614",
+      "src/assets/06.jpg.asset.json": "05892526960e4ddb91ff5d9288b1ffa7",
+      "src/assets/10-seven-dourado.jpg.asset.json": "497cd6227de78ea64cfa2c7784bcf91b",
+      "src/assets/11-seven-dourado.jpg.asset.json": "239839fd008cf4ee8a062340e994e4ad",
+      "src/assets/13-seven-dourado.jpg.asset.json": "a28f39c724793427b6d8876cc03d2867",
+      "src/assets/15-seven-dourado.jpg.asset.json": "81493db076b4eb5ba852e739ebfc9bef",
+      "src/assets/16-seven-dourado.jpg.asset.json": "c76af734d1d2ef25d7c1f6783b1b5a48",
+      "src/assets/17-seven-dourado.jpg.asset.json": "ef5027438c75af78be6842cdd1aaca36",
+      "src/assets/18-seven-dourado.jpg.asset.json": "2c51ac25c85e2bda54900b6a22033005",
+      "src/assets/19-seven-dourado.jpg.asset.json": "8a803c722542a98dacf7e491fbae8cab",
+      "src/assets/20-seven-dourado.jpg.asset.json": "79d7ce228db186ff242e5affd38d9e6d",
+      "src/assets/21-thumb.jpg.asset.json": "ec54d1d8a3f1f9b619973360a37d0557",
+      "src/assets/21.jpg.asset.json": "e31bd7ba4ae2af26a915ca2edad9e93a",
+      "src/assets/22-thumb.jpg.asset.json": "84498c4a841371bd4363f84127a74965",
+      "src/assets/22.jpg.asset.json": "0fd6740ae9199b495e92890d7fb46f33",
+      "src/assets/og-sofa.jpg.asset.json": "33aca81bb799eb5a739736c1d800d85d",
+      "src/assets/recepcao-aprimorada.jpg.asset.json": "3fbcbdf413102e77fa137998b5ee2a47",
+      "src/assets/recepcao-atual-thumb.jpg.asset.json": "29cf8154fcb9cb412334bd5f8533bf26",
+      "src/assets/salao-atual-thumb.jpg.asset.json": "9a146229348338ac105ef446ef89e1d7",
+      "src/assets/salao-atual.jpg.asset.json": "b63907478de40ea7fb353d456e9c12d3",
+      "src/assets/salao-seven-dourado.jpg.asset.json": "0d8018de66118ca734d19ded5c0d6d9c",
+      "src/assets/salao-telao-jogo-thumb.jpg.asset.json": "5219d508b94713a395a5cc0c63fdb95f",
+      "src/assets/salao-telao-jogo.jpg.asset.json": "b4e640817f772f4991db5c6f8fb9a171",
+      "src/assets/salao-telao-original-thumb.jpg.asset.json": "3b72029149ed2064cb6e7f81878fa248",
+      "src/assets/salao-telao-original.jpg.asset.json": "5a06fad4e9edc4470f4eee441d507b75",
+      "src/assets/sofa-atual-thumb.jpg.asset.json": "611fa14077d62c35d69681f2699af969",
+      "src/assets/sofa-atual.jpg.asset.json": "21f7e88be66b442e4ff88d984d4050e7",
+      "src/components/AdminPanorama.tsx": "2eb21a9ab7ce59b4aa8f3f827651eadb",
+      "src/components/PanoramaBoundary.tsx": "487a9d15adf5aa28c33e708fc87d4e6f",
+      "src/components/TourEditor.tsx": "8f6ed4796ba0045b8f0d0e43965d666c",
+      "src/components/TourViewer.tsx": "01236f6fe7e39d23f32fa146352dfb5c",
+      "src/components/ui/accordion.tsx": "55f9dda62b4e3913c9b23e5015a86aef",
+      "src/components/ui/alert-dialog.tsx": "96350e949e9b7b674545430a410ab89c",
+      "src/components/ui/alert.tsx": "f993d7e96b1e25ce50e68ed97e11d2a8",
+      "src/components/ui/aspect-ratio.tsx": "c5c364545e1b25a94e9e752cd67ad048",
+      "src/components/ui/avatar.tsx": "72989cd32f72c4122802540ef32525a5",
+      "src/components/ui/badge.tsx": "81cade001fc4260f9943e18dcd79449b",
+      "src/components/ui/breadcrumb.tsx": "bb9ac254f12662b20d5d50b84308bf3a",
+      "src/components/ui/button.tsx": "7d07d520f486b12bd47373d694ecd2ee",
+      "src/components/ui/calendar.tsx": "d849cc610e2683271f3f1c47d093cf30",
+      "src/components/ui/card.tsx": "d6c48ea36221b9cdc3576d305d12d5d5",
+      "src/components/ui/carousel.tsx": "e324c68ae00cd5aed49317638abd429a",
+      "src/components/ui/chart.tsx": "6a3baf94f2e89f1f97d4d7a28f3622d2",
+      "src/components/ui/checkbox.tsx": "f78aac270ca482c8c2cb907ef6260462",
+      "src/components/ui/collapsible.tsx": "767631bbc344945c236f185f4078d71d",
+      "src/components/ui/command.tsx": "014782599cc838b021ec68b07ad4ea02",
+      "src/components/ui/context-menu.tsx": "3ba8244ea23df34a1dba92f3a1230dad",
+      "src/components/ui/dialog.tsx": "ef4fe8e7de8675730afe3d633b260e09",
+      "src/components/ui/drawer.tsx": "8be333e8fd8e42576b1b5f72f07f4337",
+      "src/components/ui/dropdown-menu.tsx": "28d6e98d3c7811fc0514bfa69416f087",
+      "src/components/ui/form.tsx": "1b0aa6302b9017ea2a1307c22a1d2983",
+      "src/components/ui/hover-card.tsx": "1442794c5ca2a78d69e4e613b315ed3d",
+      "src/components/ui/input-otp.tsx": "65625f2f1c4d731a760aeed7b54459d1",
+      "src/components/ui/input.tsx": "1d4cc52a4cd8afb3e18e45bda942bb8a",
+      "src/components/ui/label.tsx": "7e35df4ca8edd0835efd97ca7937ef92",
+      "src/components/ui/menubar.tsx": "3c4121a1e78d3f424a7295381a8997d3",
+      "src/components/ui/navigation-menu.tsx": "e85351147a02b29577ff83d188b63c24",
+      "src/components/ui/pagination.tsx": "fac6cdbb4bbf78b273d85cd36d6cbb49",
+      "src/components/ui/popover.tsx": "f18aa1da2144f25ee60795c539c51bcd",
+      "src/components/ui/progress.tsx": "55c462e5c9dd678dcf2c0c510b014ac4",
+      "src/components/ui/radio-group.tsx": "0e1ace237a5da3197e3eb1e6683faba9",
+      "src/components/ui/resizable.tsx": "d9fcb9203c749fcab4e125a99bb12a86",
+      "src/components/ui/scroll-area.tsx": "87b65d3eb26f2b02ff35a7acea585ba5",
+      "src/components/ui/select.tsx": "31ea1bbd6671833b010b2e852c8a55d0",
+      "src/components/ui/separator.tsx": "433d163c4ffa00b59398a0c293198b5e",
+      "src/components/ui/sheet.tsx": "0221fbf97b69611b47fcbc10bb27669a",
+      "src/components/ui/sidebar.tsx": "83c1623eb50ebc370d7b1b84a542e369",
+      "src/components/ui/skeleton.tsx": "41b182e6e2fc3805960d41e767d4a972",
+      "src/components/ui/slider.tsx": "4752f1bfa26426988d325599e01c335b",
+      "src/components/ui/sonner.tsx": "97f59f60be3413196d095fcbf7383216",
+      "src/components/ui/switch.tsx": "82f5d8b0c59bb7ff305caa9f502e79ff",
+      "src/components/ui/table.tsx": "7cc889989d53894b659903c73aded96e",
+      "src/components/ui/tabs.tsx": "56e725558c2ce72c18243bf51717f385",
+      "src/components/ui/textarea.tsx": "c7aad96fb9545210d53135a96c76ed6b",
+      "src/components/ui/toggle-group.tsx": "ac26383acf721d116ca8e3ab5c5355d5",
+      "src/components/ui/toggle.tsx": "ee8c5adac74e7242b85b544db1a8fbad",
+      "src/components/ui/tooltip.tsx": "67d71db5a1ab935695d1def497f5b8a6",
+      "src/data/tour.json": "c05f1d5c09519fb7c1be8ac1c4b49616",
+      "src/data/tour.ts": "e1c4874179e5add02c91b0fb85db1d64",
+      "src/hooks/use-mobile.tsx": "c0a0bdd4638c391a1dd06ac82074e60b",
+      "src/integrations/supabase/auth-attacher.ts": "dad043cda134d909e52de0346c16625e",
+      "src/integrations/supabase/auth-middleware.ts": "eabaf8c8ba32205717921ce5f255185e",
+      "src/integrations/supabase/client.server.ts": "23f838ab7633e0a97e695f3c500d91aa",
+      "src/integrations/supabase/client.ts": "2e72a87ed578e0084537f2646f2d7e6a",
+      "src/integrations/supabase/cron-auth.ts": "6c04781ff98ada5977945fae55d39385",
+      "src/integrations/supabase/previewAuthStorage.ts": "315e4ae3473d92766e0d6d4d83945aef",
+      "src/integrations/supabase/types.ts": "5a426188b0814ab7cbcb9408278b0954",
+      "src/lib/admin-rules.ts": "3e14082ff490f4c28de2140d3d27ce7f",
+      "src/lib/admin-session.server.ts": "c921d957b4b16444a839b96eb78fe55c",
+      "src/lib/admin.functions.ts": "0ba76e3a58b6b1b0a33c98dc8a99e127",
+      "src/lib/error-capture.ts": "f630d9686a9a989170f22eff4de7b30d",
+      "src/lib/error-page.ts": "8da0ddd7569bac2676b9a5c8edff8a36",
+      "src/lib/lovable-error-reporting.ts": "920280997099588d609de792663bcbf0",
+      "src/lib/pannellum-loader.ts": "ce86ee508f6f40ff7f10ca83c78d2895",
+      "src/lib/public-tour.functions.ts": "b942d077f794a8c2f4a9faef056febaa",
+      "src/lib/tour-motion.ts": "560890b429e1617e093ead3147f8ae88",
+      "src/lib/utils.ts": "d9837f38cc05303254571985e3164050",
+      "src/routeTree.gen.ts": "f5d9a62cd38e8650658adcbc55e44ecd",
+      "src/router.tsx": "8f905e713b0eba7fa8148b7995a708c9",
+      "src/routes/README.md": "b3a2f259b66fd1a11f54b6d5ac83bf57",
+      "src/routes/__root.tsx": "93a3603605c54097d79c73ac62fefc1e",
+      "src/routes/admin.tsx": "d23888bbe7f2450fcaad3293d032658d",
+      "src/routes/incorporar.tsx": "267e1e863a0e5183a5ccf72489dc6611",
+      "src/routes/index.tsx": "49a8312d0388f5b95f55566aa2293fda",
+      "src/server.ts": "c7bbc49bb70e318af618d92775ee0f27",
+      "src/start.ts": "d77c1c12904be5077c6955d9b30071af",
+      "src/styles.css": "bd24fb21298242e4ade947e0b907d120",
+      "src/test/admin-panorama.test.tsx": "10d98a644e348e0cb2051546c5890c7a",
+      "src/test/admin-rules.test.ts": "3493476cd868035a8d77bff0f07c895a",
+      "src/test/app-routing.test.tsx": "dda0393c89450a1e5b7874b424dca80d",
+      "src/test/setup.ts": "ef5807c07db57482ab718e40246688a2",
+      "src/test/tour-motion.test.ts": "6bbac5ca385c8c67c2f8740bbef96562",
+      "src/test/tour-viewer.test.tsx": "79e8287b12252fabe219b4c49f20e3da",
+      "src/test/tour.test.ts": "06dcbe3f2839aa25266e18ae60435eeb",
+      "supabase/config.toml": "ddd383884e87ecc43b6bcc056f5429f5",
+      "tsconfig.json": "3d34aff71739a382bec105bad1c6948f",
+      "vite.config.ts": "d67e8217e5f31b87c276b6357c9aedcf",
+      "vitest.config.ts": "cdf9aff9538e6bc3eb92842264b030a9"
+    },
+    "pipeline_version": 8
+  },
+  "tokens": {
+    "color": [
+      {
+        "name": "--background",
+        "raw": "oklch(0.15 0 0)",
+        "source": "src/styles.css"
+      },
+      {
+        "name": "--foreground",
+        "raw": "oklch(0.95 0.005 80)",
+        "source": "src/styles.css"
+      },
+      {
+        "name": "--card",
+        "raw": "oklch(0.19 0 0)",
+        "source": "src/styles.css"
+      },
+      {
+        "name": "--primary",
+        "raw": "oklch(0.72 0.13 152)",
+        "source": "src/styles.css"
+      },
+      {
+        "name": "--primary-foreground",
+        "raw": "oklch(0.15 0 0)",
+        "source": "src/styles.css"
+      },
+      {
+        "name": "--secondary",
+        "raw": "oklch(0.25 0 0)",
+        "source": "src/styles.css"
+      },
+      {
+        "name": "--muted",
+        "raw": "oklch(0.23 0 0)",
+        "source": "src/styles.css"
+      },
+      {
+        "name": "--muted-foreground",
+        "raw": "oklch(0.72 0.01 70)",
+        "source": "src/styles.css"
+      },
+      {
+        "name": "--accent",
+        "raw": "oklch(0.27 0 0)",
+        "source": "src/styles.css"
+      },
+      {
+        "name": "--destructive",
+        "raw": "oklch(0.6 0.2 27)",
+        "source": "src/styles.css"
+      },
+      {
+        "name": "--border",
+        "raw": "oklch(1 0 0 / 12%)",
+        "source": "src/styles.css"
+      },
+      {
+        "name": "--input",
+        "raw": "oklch(1 0 0 / 6%)",
+        "source": "src/styles.css"
+      },
+      {
+        "name": "--glass",
+        "raw": "oklch(0.12 0 0 / 65%)",
+        "source": "src/styles.css"
+      },
+      {
+        "name": "--seven-green",
+        "raw": "oklch(0.72 0.13 152)",
+        "source": "src/styles.css"
+      }
+    ],
+    "typography": [
+      {
+        "name": "--font-display",
+        "raw": "\"Bebas Neue\", sans-serif",
+        "source": "src/styles.css"
+      },
+      {
+        "name": "--font-sans",
+        "raw": "\"Barlow\", sans-serif",
+        "source": "src/styles.css"
+      }
+    ],
+    "radius": [
+      {
+        "name": "--radius-sm",
+        "raw": "calc(var(--radius) - 4px)",
+        "source": "src/styles.css"
+      },
+      {
+        "name": "--radius-md",
+        "raw": "calc(var(--radius) - 2px)",
+        "source": "src/styles.css"
+      },
+      {
+        "name": "--radius-xl",
+        "raw": "calc(var(--radius) + 4px)",
+        "source": "src/styles.css"
+      },
+      {
+        "name": "--radius-2xl",
+        "raw": "calc(var(--radius) + 8px)",
+        "source": "src/styles.css"
+      },
+      {
+        "name": "--radius-3xl",
+        "raw": "calc(var(--radius) + 12px)",
+        "source": "src/styles.css"
+      },
+      {
+        "name": "--radius-4xl",
+        "raw": "calc(var(--radius) + 16px)",
+        "source": "src/styles.css"
+      },
+      {
+        "name": "--radius",
+        "raw": "0.75rem",
+        "source": "src/styles.css"
+      }
+    ],
+    "other": [
+      {
+        "name": "--arrow-size",
+        "raw": "52px",
+        "source": "src/styles.css"
+      },
+      {
+        "name": "--arrow-opacity",
+        "raw": "1",
+        "source": "src/styles.css"
+      },
+      {
+        "name": "--arrow-rotation",
+        "raw": "0deg",
+        "source": "src/styles.css"
+      }
+    ]
+  },
+  "components": [
+    {
+      "name": "AdminPanorama",
+      "file": "src/components/AdminPanorama",
+      "import_path": "",
+      "is_default": true
+    },
+    {
+      "name": "PanoramaBoundary",
+      "file": "src/components/PanoramaBoundary",
+      "import_path": "",
+      "is_default": true
+    },
+    {
+      "name": "TourEditor",
+      "file": "src/components/TourEditor",
+      "import_path": "",
+      "is_default": true
+    },
+    {
+      "name": "TourViewer",
+      "file": "src/components/TourViewer",
+      "import_path": "",
+      "is_default": true
+    }
+  ],
+  "assets": [
+    {
+      "file": "src/assets/02-thumb.jpg.asset.json",
+      "kind": "image",
+      "format": "jpg",
+      "pointer": true
+    },
+    {
+      "file": "src/assets/02.jpg.asset.json",
+      "kind": "image",
+      "format": "jpg",
+      "pointer": true
+    },
+    {
+      "file": "src/assets/05-seven-dourado.jpg.asset.json",
+      "kind": "image",
+      "format": "jpg",
+      "pointer": true
+    },
+    {
+      "file": "src/assets/06-thumb.jpg.asset.json",
+      "kind": "image",
+      "format": "jpg",
+      "pointer": true
+    },
+    {
+      "file": "src/assets/06.jpg.asset.json",
+      "kind": "image",
+      "format": "jpg",
+      "pointer": true
+    },
+    {
+      "file": "src/assets/10-seven-dourado.jpg.asset.json",
+      "kind": "image",
+      "format": "jpg",
+      "pointer": true
+    },
+    {
+      "file": "src/assets/11-seven-dourado.jpg.asset.json",
+      "kind": "image",
+      "format": "jpg",
+      "pointer": true
+    },
+    {
+      "file": "src/assets/13-seven-dourado.jpg.asset.json",
+      "kind": "image",
+      "format": "jpg",
+      "pointer": true
+    },
+    {
+      "file": "src/assets/15-seven-dourado.jpg.asset.json",
+      "kind": "image",
+      "format": "jpg",
+      "pointer": true
+    },
+    {
+      "file": "src/assets/16-seven-dourado.jpg.asset.json",
+      "kind": "image",
+      "format": "jpg",
+      "pointer": true
+    },
+    {
+      "file": "src/assets/17-seven-dourado.jpg.asset.json",
+      "kind": "image",
+      "format": "jpg",
+      "pointer": true
+    },
+    {
+      "file": "src/assets/18-seven-dourado.jpg.asset.json",
+      "kind": "image",
+      "format": "jpg",
+      "pointer": true
+    },
+    {
+      "file": "src/assets/19-seven-dourado.jpg.asset.json",
+      "kind": "image",
+      "format": "jpg",
+      "pointer": true
+    },
+    {
+      "file": "src/assets/20-seven-dourado.jpg.asset.json",
+      "kind": "image",
+      "format": "jpg",
+      "pointer": true
+    },
+    {
+      "file": "src/assets/21-thumb.jpg.asset.json",
+      "kind": "image",
+      "format": "jpg",
+      "pointer": true
+    },
+    {
+      "file": "src/assets/21.jpg.asset.json",
+      "kind": "image",
+      "format": "jpg",
+      "pointer": true
+    },
+    {
+      "file": "src/assets/22-thumb.jpg.asset.json",
+      "kind": "image",
+      "format": "jpg",
+      "pointer": true
+    },
+    {
+      "file": "src/assets/22.jpg.asset.json",
+      "kind": "image",
+      "format": "jpg",
+      "pointer": true
+    },
+    {
+      "file": "src/assets/og-sofa.jpg.asset.json",
+      "kind": "image",
+      "format": "jpg",
+      "pointer": true
+    },
+    {
+      "file": "src/assets/recepcao-aprimorada.jpg.asset.json",
+      "kind": "image",
+      "format": "jpg",
+      "pointer": true
+    },
+    {
+      "file": "src/assets/recepcao-atual-thumb.jpg.asset.json",
+      "kind": "image",
+      "format": "jpg",
+      "pointer": true
+    },
+    {
+      "file": "src/assets/salao-atual-thumb.jpg.asset.json",
+      "kind": "image",
+      "format": "jpg",
+      "pointer": true
+    },
+    {
+      "file": "src/assets/salao-atual.jpg.asset.json",
+      "kind": "image",
+      "format": "jpg",
+      "pointer": true
+    },
+    {
+      "file": "src/assets/salao-seven-dourado.jpg.asset.json",
+      "kind": "image",
+      "format": "jpg",
+      "pointer": true
+    },
+    {
+      "file": "src/assets/salao-telao-jogo-thumb.jpg.asset.json",
+      "kind": "image",
+      "format": "jpg",
+      "pointer": true
+    },
+    {
+      "file": "src/assets/salao-telao-jogo.jpg.asset.json",
+      "kind": "image",
+      "format": "jpg",
+      "pointer": true
+    },
+    {
+      "file": "src/assets/salao-telao-original-thumb.jpg.asset.json",
+      "kind": "image",
+      "format": "jpg",
+      "pointer": true
+    },
+    {
+      "file": "src/assets/salao-telao-original.jpg.asset.json",
+      "kind": "image",
+      "format": "jpg",
+      "pointer": true
+    },
+    {
+      "file": "src/assets/sofa-atual-thumb.jpg.asset.json",
+      "kind": "image",
+      "format": "jpg",
+      "pointer": true
+    },
+    {
+      "file": "src/assets/sofa-atual.jpg.asset.json",
+      "kind": "image",
+      "format": "jpg",
+      "pointer": true
+    }
+  ]
+}
